@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>1-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body >
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="4-var-string.html"> 4 D&Eacute;claration</a>
+        <a href="5-locale-globale.html"> 5 encodeURI </a>
+        <a href="6-type.html"> 6 Type</a>
+    </nav>
+  </header>
+  <article><br />
+  <h4> UriEncode </h4><br /><br />
+  La fonction encodeURI retourne un URI encodé. <br>
+Si vous passez le résultat à la méthode decodeURI,<br>
+  la chaîne d'origine est retournée. <br>
+  La fonction encodeURI n'encode pas les caractères suivants : « : », « / », « ; » et « ? ».<br />
+  Utilisez la méthode encodeURIComponent pour encoder ces caractères.
+  <br /><br />
+  <pre>http://www.Not a URL.com </pre>
+  </article>
+<script type="text/javascript">
+//<![CDATA[
+var uriEncode = encodeURI ("http://www.Not a URL.com");
+var uriDecode = decodeURIComponent(uriEncode);
+
+ /*La fonction encodeURI retourne un URI encodé. Si vous passez le résultat à la méthode decodeURI,
+  la chaîne d'origine est retournée. 
+  La fonction encodeURI n'encode pas les caractères suivants : « : », « / », « ; » et « ? ».
+  Utilisez la méthode encodeURIComponent pour encoder ces caractères. */
+
+document.write(uriEncode);
+document.write("<br/>");
+document.write(uriDecode);
+
+
+// ]]>
+</script>
+  
+</body>
+</html>

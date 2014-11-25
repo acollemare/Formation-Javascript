@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<script src="modernizr.min.js" type="text/javascript">
+if (Modernizr.audio) {
+        if (Modernizr.audio.ogg) {
+            audio.src="cerise.ogg"; 
+        }
+        if (Modernizr.audio.mp3) {
+            audio.src="cerise.mp3"; 
+        }
+    }
+    else {
+      //masquer le lecteur
+    }
+
+</script>
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+       <a href="4-drag.html"> 4 Drag & Drop</a>
+       <a href="5-modernizr.html"> 5 modernizr</a>
+	   <a href="../11-Ajax/1-ajax.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Modernizr :   </h4>
+    <br /> <br />
+<a href="http://www.modernizr.com/"><strong>Modernizr </strong></a>est une bibliothèque JavaScript conçue pour détecter des fonctionnalités spécifiques de HTML et CSS dans les navigateurs. <br />
+Puisqu'il est inutile d'embarquer un fichier complet de détection dans tous les sites web, un script sur mesure peut être construit&nbsp;en piochant parmi les fonctionnalités détectables.
+<br />Il sera par exemple possible de savoir si le navigateur supporte les transformations CSS 3D, la vidéo HTML5, Canvas ou SVG, et de prévoir une alternative le cas échéant.</p><br />
+<p>
+	Son usage est très simple, il suffit de copier-coller les quelques lignes générées dans le code source de la page, ou bien dans un fichier externe, puis d'exploiter l'objet Modernizr et ses propriétés <br />(par exemple <code class="js">Modernizr.canvas</code>, <br /><code class="js">Modernizr.fontface</code>,<br /> <code class="js">Modernizr.geolocation</code> etc), initialisées aux valeurs booléennes <code>true</code> ou <code>false</code>.<br /> La méthode&nbsp;<code class="js">Modernizr.load</code> vise aussi à faciliter le chargement de scripts tiers.<br /> Enfin, la bibliothèque embarque une déclaration des éléments HTML5 pour les anciennes versions d'Internet Explorer afin de permettre l'emploi de styles sur ces derniers.</p>
+<p>
+	Attention : il ne s'agit pas de <em>moderniser</em> les navigateurs mais uniquement de procéder à une <em>détection</em>, pour éventuellement utiliser d'autres scripts en complément, apportant des fonctionnalités non supportées.</p><div class="center"><a href="http://www.modernizr.com/"><img src="/xmedia/doc/full/modernizr1.png" alt="" /></a></div>    </div>
+  <div id="html5audio" class="audio">
+   <audio controls>
+      <source src="cerises.ogg" type="audio/ogg" />
+      <source src="cerises.mp3" type="audio/mpeg" />
+   </audio>
+</div></article> 
+</body>
+</html>

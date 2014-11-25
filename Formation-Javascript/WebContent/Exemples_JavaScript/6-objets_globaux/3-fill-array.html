@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+       
+        <a href="2-array.html"> 2 array</a>
+        <a href="3-fill-array.html"> 3 alimenter un tableau </a>
+        <a href="4-modif-array.html"> 4 modifier un tableau</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Alimenter un tableau :   </h4>
+   
+  <pre>//Remplir un tableau en assignant des vaLeurs à ses éléments
+var emp = [];
+emp[0] = "Casey Jones";
+emp[1] = "Phil Lesh";
+emp[2] = "August West";
+//Si une valeur non entière est fournie à L'opérateur []alors une propriété sera créée dans L'objet correspondant et non pas un élément .
+var arr=[];
+arr[3.4] = "Oranges";
+console.log(arr.length);// 0
+console.log(arr[3.4]);// "Oranges"
+console.log(arr.hasOwnProperty(3.4));// true;
+
+
+</pre>
+    <script type="text/javascript">
+//<![CDATA[
+
+var emp = [];
+emp[0] = "Casey Jones";
+emp[1] = "Phil Lesh";
+emp[2] = "August West";
+//Si une vaLeur non entière est fournie à L'opérateur []aLors une propriété sera créée dans L'objet correspondant et non pas un élément .
+var arr=[];
+arr[3.4] = "Oranges";
+console.log(arr.length);
+console.log(arr[3.4]);
+console.log(arr.hasOwnProperty(3.4));
+
+
+// ]]>
+</script>
+ 
+ <h4>consulter un tableau :   </h4>
+ <pre>
+var myArray = ["Wind", "Rain", "Fire"];
+myArray[0]; // "Wind"_, 0 est Le premier élément d"'un tableau
+myArray[1]; // "Rain"
+// l'opérateur array [] est aussi utilisé pour accéder aux propriétés d'un tableau (qui est aussi un objet en JavaScript)
+var arr= ["un", "deux", "trois"];
+arr[2]; // trois
+arr [ "length"]; //3
+arr.length = 2 ;// tronque le tableau
+ </pre>
+ <script type="text/javascript">
+//<![CDATA[ 
+var myArray = ["Wind", "Rain", "Fire"];
+myArray[0]; // "Wind"_, 0 est Le premier élément d"'un tableau
+myArray[1]; // "Rain"
+// l'opérateur array [] est aussi utilisé pour accéder aux propriétés d'un tableau (qui est aussi un objet en JavaScript)
+var arr= ["un", "deux", "trois"];
+arr[2]; 
+arr [ "length"];
+document.write(arr[2]);
+// ]]>
+</script><br />
+<h4>parcourir un tableau : </h4>
+<pre>
+var colors = [ 'red' , ' green' , ' blue '];
+// boucLe for
+for (var i = 0; i < colors.length ; i++) {
+console.log(colors[i]) ;
+}
+//JavaScript 1.6
+// avec La méthode forEach du tableau qui applique la fonction passée en paramètre à chaque élément du tableau
+colors.forEach(function(color ) {
+console.log (color);
+} ) ;
+)
+</pre>
+ <script type="text/javascript">
+//<![CDATA[ 
+var colors = [' red' , ' green' , ' blue '];
+
+for (var i = 0; i < colors.length ; i++) {
+console.log(colors[i]) ;
+}
+colors.forEach(function(color ) {
+console.log (color);
+} ) ;
+
+// ]]>
+</script>
+</article> 
+</body>
+</html>

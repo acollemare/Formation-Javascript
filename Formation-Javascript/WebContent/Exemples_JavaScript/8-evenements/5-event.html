@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+  <div><h1>Javascript</h1></div>
+  <nav>
+  <a href="4-evenhandler.html"> 4 EvenHandler</a>
+  <a href="5-event.html"> 5 event</a>
+  <a href="6-propagation.html"> 6 Propagation </a>
+  </nav>
+  </header>
+  <article>
+  <br />
+  <h4> Le paramètre EVENT : </h4>
+  <p><br /> 
+    <br />
+    le paramètre event fait partie de la gestion globale des événements par le navigateur il est considéré comme un objet et possède donc des méthodes et propriété </p>
+  <p>Un événement est un changement d'état de l'environnement qui peut être intercepté par le code JavaScript<br /><br />
+  </p>
+  <table width="550">
+  <tr><th>Propri&eacute;t&eacute;</th><th>Description</th></tr>
+<tr><td><b>type</b></td><td>retourne le type de l'&eacute;v&egrave;nement</td></tr>
+<tr><td nowrap="nowrap"><b>currentTarget</b></td><td>retourne l'&eacute;l&eacute;ment qui a d&eacute;clench&eacute; l'&eacute;v&egrave;nement</td></tr>
+<tr><td><b>target</b></td><td>retourne l'&eacute;l&eacute;ment survol&eacute; dont le parent est l'&eacute;l&eacute;ment qui a d&eacute;clench&eacute; l'&eacute;v&egrave;nement.</td></tr>
+</table>
+<br />
+<table  width="550"><tr><th>propriete</th><th>description</th></tr>
+<tr><td>button</td><td>Retours le bouton de la souris qui a &eacute;t&eacute; cliqu&eacute; (0:gauche;1:centre:2droite)</td></tr>
+<tr><td>clientX</td><td>Retour de la coordonn&eacute;e horizontale du pointeur de la souris, par rapport &agrave; la fen&ecirc;tre du navigateur.</td></tr>
+<tr><td>clientY</td><td>Retour de la coordonn&eacute;e verticale du pointeur de la souris, par rapport &agrave; la fen&ecirc;tre du navigateur.</td></tr>
+<tr><td>screenX</td><td>Retour de la coordonn&eacute;e horizontale du pointeur de la souris, par rapport &agrave; l'&eacute;cran</td></tr>
+<tr><td>screenY</td><td>Retour de la coordonn&eacute;e verticale du pointeur de la souris, par rapport &agrave; l'&eacute;cran</td></tr>
+<tr><td>charCode</td><td>R&eacute;cup&egrave;re le code de caract&egrave;re Unicode de la touche qui a g&eacute;n&eacute;r&eacute; l'&eacute;v&eacute;nement onkeypress.</td></tr
+><tr><td>altKey</td><td>Retours si oui ou non la touche "ALT" a &eacute;t&eacute; press&eacute; quand un &eacute;v&eacute;nement a &eacute;t&eacute; d&eacute;clench&eacute;</td></tr
+><tr><td>shiftKey</td><td>Retours si oui ou non la touche "SHIFT" a &eacute;t&eacute; press&eacute; quand un &eacute;v&eacute;nement a &eacute;t&eacute; d&eacute;clench&eacute;</td></tr>
+<tr><td>ctrlKey</td><td>Retours si oui ou non la touche "CTRL" a &eacute;t&eacute; press&eacute; quand un &eacute;v&eacute;nement a &eacute;t&eacute; d&eacute;clench&eacute;</td></tr>
+<tr><td>metaKey</td><td>Retours si oui ou non la touche "meta" a &eacute;t&eacute; press&eacute; quand un &eacute;v&eacute;nement a &eacute;t&eacute; d&eacute;clench&eacute;</td></tr>
+<tr><td>relatedTarget</td><td>Retourne l'&eacute;l&eacute;ment li&eacute; &agrave; l'&eacute;l&eacute;ment qui a d&eacute;clench&eacute; l'&eacute;v&eacute;nement</td></tr>
+<tr></tr
+></table>
+<script type="text/javascript">
+//<![CDATA[
+var mouseTracker = function (event) {
+event = event || window.event //Attention à IE
+console.log(event); // MouseEvent {dataTransfer: null, toElement : div, fromELement: null, y: 23, x: 200...}
+}
+document.body.addEventListener("mousemove", mouseTracker, false) ;
+// ]]>
+</script>
+ </article> 
+</body>
+</html>

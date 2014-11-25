@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        
+        <a href="6-date.html"> 6 date </a>
+        <a href="7-math.html"> 7 Math</a>
+        <a href="8-regexp.html"> 8 RegExp</a>
+    </nav>
+  </header>
+  <article>
+    <br />
+      
+       
+    <h4>Math :   </h4><br /><br />
+      <h4>- ABS()   </h4><br />
+      Cette méthode renvoie la valeur absolue d'un nombre, il renvoie donc le nombre s'il est positif, son opposé (positif) s'il est négatif
+      <pre>
+ x = Math.abs(3.26); 
+//donne x = 3.26
+  x = Math.abs(-3.26); 
+//donne x = 3.26 </pre>
+  
+<script type="text/javascript">
+//<![CDATA[
+ x = Math.abs(-3.26); 
+ document.write(x);
+// ]]>
+
+</script><br />
+ 
+<h4>- ceil()   </h4><br />
+     Renvoie le plus petit entier supérieur ou égal à la valeur donnée en paramètre 
+    <pre>
+    x = Math.ceil(6.01); 
+//donne x = 7
+    x = Math.ceil(3.99); 
+//donne x = 4 
+</pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+x = Math.ceil(3.99);
+ document.write(x);
+// ]]>
+</script><br />
+<h4>- floor()   </h4><br />
+     La méthode floor() retourne le plus grand entier inférieur ou égal à la valeur donnée en paramètre.
+      
+    <pre>
+    x = Math.floor(6.01); 
+//donne x = 6
+    x = Math.floor(3.99); 
+//donne x = 3 </pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+ x = Math.floor(3.99); 
+ document.write(x);
+// ]]>
+</script><br />
+<h4>- round()   </h4><br />
+     Arrondit à l'entier le plus proche la valeur donnée en paramètre. <br />
+Si la partie décimale de la valeur entrée en paramètre vaut 0.5, la méthode Math.round() arrondi à l'entier supérieur.
+    <pre>
+    x = Math.round(6.01); 
+//donne x = 6
+    x = Math.round(3.80); 
+//donne x = 4
+    x = Math.round(3.50); 
+//donne x = 4</pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+ x = Math.round(3.50); 
+ document.write(x);
+// ]]>
+</script>
+<br />
+<h4>- max(Nombre1, Nombre2)   </h4><br />
+     max() renvoie le plus grand des deux nombres donnés en paramètre
+    <pre>
+       var x = Math.max(6,7.25); 
+   //donne x = 7.25
+    var x = Math.max(-8.21,-3.65);
+    //donne x = -3.65  </pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+var x = Math.max(-8.21,-3.65);
+ document.write(x);
+// ]]>
+</script>
+<br />
+<h4>- min(Nombre1, Nombre2)   </h4><br />
+     Retourne le plus petit des deux nombres donnés en paramètre
+    <pre>
+   x = Math.min(6,7.25); 
+//donne x = 6
+    x = Math.min(-8.21,-3.65,-55); 
+//donne x = -8.21   </pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+ x = Math.min(-8.21,-3.65,-55); 
+ document.write(x);
+// ]]>
+</script>
+<br />
+<h4>- random()   </h4><br />
+     La méthode random() renvoie un nombre pseudo-aléatoire compris entre 0 et 1. La valeur est générée à partir des données de l'horloge de l'ordinateur.
+    <pre>
+  x = Math.random();  </pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+
+x = Math.random(); 
+ document.write(x);
+// ]]>
+</script>
+<br />
+<h4>- sqrt(Valeur)   </h4><br />
+     Renvoie la racine carrée du nombre passé en paramètre
+    <pre>
+   x = Math.sqrt(9); 
+//donne x = 3 </pre>
+
+    <p>
+      <script type="text/javascript">
+//<![CDATA[
+    x = Math.sqrt(9); 
+
+ document.write(x);
+// ]]>
+      </script>
+    </p>
+    <p><a href="exercice.html">exercice</a></p>
+</article> 
+</body>
+</html>

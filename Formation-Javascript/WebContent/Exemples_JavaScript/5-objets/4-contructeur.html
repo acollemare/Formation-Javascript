@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>5-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="3-new.html"> 3 Création </a> 
+        <a href="4-contructeur.html"> 4 constructeur</a> 
+        <a href="5-this.html"> 5 this</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Opérateur newr :   </h4><br />
+    Deux étapes:<br />
+    • définir la fonction constructeur, qui représente le 
+    type d'objet à créer. <br />Par convention, la première
+    lettre de la fonction constructeur est en majuscule.<br />
+    • créer une instance de l'objet en appelant la fonction 
+    constructeur précédée de <strong>new</strong>.
+<pre >
+    
+   function Car(make, model, year) {
+   this.make = make;
+   this.model = model ;
+   this.year = year;
+}
+var mycar = new Car("Dodge", "Viper", 1992);
+var kenscar = new Car("Nissan" , "300ZX", 1992);
+var vpgscar = new Car("Mazda", "Miata", 1990);
+</pre>
+
+  
+      
+        <script type="text/javascript">
+//<![CDATA[
+ function Person(name, age, sex) {
+   this.name = name;
+   this.age = age ;
+   this.sex = sex;
+}
+var randy = new Person("randy Mac Kinnon", 33, "M");
+var luke = new Person("Luke Skywalker", 33, "M");
+
+//definition d'un type de voiture
+function Car(make, model, year, owner) {
+   this.make = make;
+   this.model = model ;
+   this.year = year;
+   this.owner = owner;
+   this.displayCar = function () {
+	   return "A beautiful " + this.year + " " +this.make + " " + this.model;
+   };
+};
+var mycar = new Car("Dodge", "Viper", 1992, randy);
+var lukescar = new Car("Nissan" , "300ZX", 1992, luke);
+
+document.write(mycar.owner.name+ '<br />');
+document.write(luke["name"]);
+//modifie des entrées
+//on peut aussi ajouter des 
+mycar.year = 1993;
+mycar.vroom = function() {return "Vroooum";};
+document.write('<br />'+mycar.year+ '<br />');
+// ]]>
+   </script>
+</article> 
+</body>
+</html>

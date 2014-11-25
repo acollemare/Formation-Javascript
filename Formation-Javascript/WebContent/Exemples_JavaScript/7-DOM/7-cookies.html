@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+ <script type="text/javascript">
+//<![CDATA[
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+createCookie("cook", "test", 10)
+// ]]>
+</script> 
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="6-windows.html"> 6 Windows </a>
+        <a href="7-cookies.html"> 7 Cookies</a>
+        <a href="../8-evenements/1-evenement.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Cookies :   </h4>
+    <p>&nbsp;</p>
+    <p><br />
+    Petit fichier texte (ou base de données) stocké par le navigateur <br />
+    - Renvoyé de manière transparente par le navigateur au serveur, à chaque requête HTTP.<br />
+    - Contient les données suivantes:<br />
+    - Paire nom/valeur contenant la donnée du cookie.<br />
+    - Date d'expiration après laquelle il n'est plus valide.<br />
+    - Domaine et path du serveur auquel il doit être renvoye.<br />
+    </p>
+    <pre>
+    // creation pour le domaine courant un cookie de session
+    document.cookie='thecookie=testcookie; path=/'
+    // ajout d'un autre cookie au domaine courant
+    document.cookie='othercookie=autre testcookie; expire=Mon, 1 mars 2010 00:00:00 UTC; path=/'
+    
+    // modifie un cookie
+    document.cookie='othercookie=encore autre testcookie; expire=Mon, 1 mars 2010 00:00:00 UTC; path=/'
+    // on peut supprimer un cookie en lui donnant une date expiré sinon
+    eraseCookie('thecookie')
+    
+    // lire un cookie
+    var x = readCookie('thecookie')
+    </pre>
+  </article>
+ <script type="text/javascript">
+//<![CDATA[
+console.log(readCookie("cook"));
+// ]]>
+</script>   
+   
+</body>
+</html>

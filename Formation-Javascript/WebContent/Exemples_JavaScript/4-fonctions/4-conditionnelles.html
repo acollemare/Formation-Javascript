@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>4-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="3-arguments.html"> 3 Arguments </a> 
+        <a href="4-conditionnelles.html"> 4 Conditionnelles</a>
+        <a href="5-predefinies.html"> 5 prédéfinies</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Fonctions :   </h4>
+    <br /> 
+    <br />
+    Il est possible de définir une fonction<br />
+    conditionnellement.</p>
+    <pre>
+    var myFunc;
+     if (num == 0){
+    
+    myFunc = function(theObject) {
+    theObject.make = "AstonMartin"
+ }
+}
+</pre>
+<script>
+//<![CDATA[
+var myFunc;
+     if (num == 0){
+    
+    myFunc = function(theObject) {
+    theObject.make = "AstonMartin"
+ }
+}
+// ]]>
+  </script>
+
+Une fonction peut s'appeler elle même.<br />
+  <script type="text/javascript">
+//<![CDATA[
+function factorial(n){
+if ((n == 0) || (n == 1))
+return 1;
+else
+return (n * factorial(n - 1));
+}
+document.write("factoriel de 5 = " +factorial(5));
+// ]]>
+  </script>
+</p>
+</article> 
+</body>
+</html>

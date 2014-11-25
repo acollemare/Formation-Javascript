@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>9-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-formulaire.html"> 1 formulaire</a>
+        <a href="2-valeurs.html"> 2 Valeurs</a>
+        <a href="3-exemple.html"> 3 exemple </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Manipuler les valeurs des éléments du formulaire :   </h4>
+    <br /> <br />
+Acces a un formulaire id=&quot;contact&quot;.<br /> <br />
+<pre>//Texts, textareas et hidden field
+user_input = document.forms[0].text.value // Lecture de l'élément dont Le name=text<br />
+document.forms[0].text.value="The new value" ; //écriture
+//Select boxes
+user_input = document.forms[0].select.value; // lecture de l'element dont le nom=select
+document.forms[0].select.selectedIndex = 2 ; //Ecriture
+//checkbox
+if (document.foms[0].checkbox.checked) {//true si La checkbox est checkée<br />
+user_input = document.forms[0].checkbox.name // conserver la checkbox checked
+
+document.forms[0].checkbox.checked=true //checker la checkbox 
+//Radio buttons
+for ( i=0;i&lt;document.forms[0].radios.length; i++) {// Parcourir tous les radios buttons
+if (document.forms[0].radios[i].checked) { //Verifier si le radio est checked
+user_input = document.form[0].radios[i].value; // récupererla valeur associéé au radio 
+document.form[0].radios[i].checked = true; // checker  le radio</pre>
+<form action="" name="test">
+<input type="text" name="text" value="nom" />
+<select name="select">
+  <option value="valeur1">affiche1</option>
+  <option value="valeur2">affiche2</option>
+  <option value="valeur3">affiche3</option>
+</select>
+<input type="hidden" name="nomHidden" value="valeur initiale">
+<INPUT TYPE="CHECKBOX" NAME="ChoixRadio" VALUE="A.M.">
+<INPUT TYPE="CHECKBOX" NAME="ChoixRadio" VALUE="F.M.">
+<INPUT TYPE="CHECKBOX" NAME="ChoixRadio" VALUE="G.O.">
+<INPUT TYPE="CHECKBOX" NAME="ChoixRadio" VALUE="K.W.">
+<INPUT TYPE="BUTTON" onClick="testCheckbox(this.form)"
+VALUE="Tester">
+<br />
+<INPUT TYPE="TEXT" NAME="reponse" placeholder="Champs calculé">
+<INPUT TYPE="TEXT" NAME="reponse2">
+</form>
+<script type="text/javascript">
+//<![CDATA[
+document.write( "Nom: "+document.test.text.value+'<br>');
+document.write(document.test.nomHidden.value+'<br>');
+document.test.nomHidden.value = "valeur finale";
+document.write(document.test.nomHidden.value+'<br>');
+function testCheckbox(formulaire) {
+ for (var i = 0; i<formulaire.elements.length; i++) {
+  if (formulaire.elements[i].name== "ChoixRadio") {
+    if (formulaire.elements[i].checked) {
+       formulaire.reponse.value =
+         formulaire.elements[i].value;
+       }
+    }
+  }
+formulaire.reponse2.value =( document.test.select.options[
+document.test.select.selectedIndex].value);
+
+}
+// ]]>
+    </script>
+
+</article> 
+</body>
+</html>

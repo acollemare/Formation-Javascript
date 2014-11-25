@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>4-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-fonctions.html"> 1 Fonctions</a>
+        <a href="2-appel.html"> 2 Appel</a>
+        <a href="3-arguments.html"> 3 Arguments </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Fonctions :   </h4>
+    <br /> <br />
+Définir une fonction ne l'exécute pas mais spécifie<br />
+simplement ce que la fonction devra faire lorsqu'elle<br />
+sera appelée.<br />
+• L'appel de la fonction exécute la fonction avec les<br />
+paramètres spécifiés.<br />
+<pre>
+//definition de la fonction 
+function square(n){
+return n*n
+//appel de la fonction
+square(5)
+</pre>
+<p>Les valeurs primitives (ex: number) sont passées en<br />
+  paramètres par valeur.  </p>
+<p>si la fonction assigne un nouvel objet au paramètre alors <br />le
+  changement n'est PAS visible à l'extérieur de la fonction.<br /><br />
+  <script type="text/javascript">
+//<![CDATA[
+
+function square(number) {
+return number * number;
+}
+document.write(square(555));
+
+// ]]>
+  </script>
+
+</article> 
+</body>
+</html>

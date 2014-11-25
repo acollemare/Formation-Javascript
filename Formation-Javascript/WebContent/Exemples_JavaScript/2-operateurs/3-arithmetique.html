@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>2-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-comparaison.html"> 2 Comparaison</a>
+        <a href="3-arithmetique.html"> 3 arithmetique </a>
+        <a href="4-logiques.html"> 4 logiques</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Op&eacute;rateurs arithmétiques :   </h4>
+    <br /> <br />
++ (addition)<br />
+- (substraction)<br />
+• (multiplication)<br />
+/ (division)<br />
+% (Modulus)<br />
+++ (Increment)<br />
+-- (Décrement)<br />
+- (Unary negation)<br />
+
+</article>
+<script type="text/javascript">
+//<![CDATA[
+// Valeurs entrees
+
+var var1 = 3;
+var var2 = 4;
+
+// comparaison arithemique
+var3 = var2 + var1;
+
+console.log(var3);
+
+var4 = var2 * var1;
+
+console.log(var4);
+
+var4 = 3 + 4 * 5 // retourne 23 et pas 35 !
+
+console.log(var4);
+
+var5 = var2 % var1;
+
+console.log(var5);
+
+var5 = 20 % var1;
+
+console.log(var5);
+
+var5++;
+/*
+++var5;
+Opérateur unaire. Ajoute 1 à son opérande.
+Si utilisé en préfixe (++x) retourne la valeur de son opérande après avoir
+ajouté 1.
+Si utilisé en suffixe (x++) retourne la valeur de son opérande avant d'avoir
+ajouté 1. */
+console.log(var5);
+
+var6=-var5
+console.log(var6);
+// ]]>
+</script>
+  
+</body>
+</html>

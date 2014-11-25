@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>2-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="8-void.html"> 8 void</a>
+        <a href="9-this-instanceof.html"> 9 this Instanceof </a>
+        <a href="../3-boucles/1-boucles.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Opérateurs  :   </h4>
+    <br /> <br /><br />
+      
+    <h4>Opérateur THIS</h4>
+   Fait référence à l'objet courant.<br />
+   <form id="test">
+   <INPUT TYPE ="text" NAME ="age" SIZE=3 onChange="validate(this, 18, 99);">
+   </form>
+   
+   <pre> 
+//pour L'élément de formuLaire suivant
+<B>Enter a number between 18 and 99: </B>
+INPUT TYPE ="text" NAME ="age" SIZE=3 onChange="validate(this, 18, 99);"
+
+</pre>
+
+ <h4>Opérateur INSTANCEOF</h4>
+   Retourne true si l'objet spécifié est du type objet spécifié.<br />
+   <pre> 
+var theDay =new Date( 2013, 12, 17) ;
+if (theDay instanceof Date) {
+// réaliser une action
+}
+</pre>
+
+<script type="text/javascript">
+//<![CDATA[
+var theDay = new Date(2013, 06, 17) ;
+if (theDay instanceof Date) {
+document.writeln(theDay);
+}
+
+
+
+// ]]>
+</script>
+  
+</article> 
+</body>
+</html>

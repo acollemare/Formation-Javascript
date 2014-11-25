@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="4-modifier-noeuds.html"> 4 modif node</a>
+        <a href="5-modif.html"> 5 modifier</a>
+        <a href="6-windows.html"> 6 Windows </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Manipuler des noeuds :   </h4>
+    <br />
+    <p>        
+    <pre>&lt;img src=&quot;images/placeholder.png&quot; class=&quot;show&quot; alt=&quot;placeholder image&quot; id=&quot;pic&quot;&gt;
+<br /><br />    
+// hasAttribute permet de vérifier la présence d'un attribut pour le noeud courant
+if(document.getElementByid("pic").hasAttribute("class")) {
+//getAttribute permet de récupérer la valeur d'un attribut
+document.getElementById ("pic").getAttribute( "class"); // retourne "show"
+
+// setAttribute modifie un attribut
+document.getElementById("pic").setAttribute( "class", "hidden"); //remplace la class par "hidden"
+
+// setAttribute permet aussi d'ajouter un nouvel attribut
+document.getElementByid("pic").setAttribute("title", "objet masqué");
+//un nouvel attribut "title" a été ajouté à l'image
+
+// removeAttribute supprime un attribut
+document.getElementByld("pic"). removeAttribute("title"); // title est finalement supprimé
+}
+    </pre>
+<script type="text/javascript">
+//<![CDATA[
+
+// hasAttribute permet de vérifier La présence d'un attribut pour Le noeud courant
+if(document.getElementById("pic").hasAttribute("class")) {
+//getAttribute permet de récupérer La valeur d'un attribut
+document.getElementById ("pic").getAttribute( "class"); // retourne "show"
+
+// setAttribute modifie un attribut
+document.getElementById("pic").setAttribute( "class", "hidden"); //remplace la class par "hidden"
+
+// setAttribute permet aussi d'ajouter un nouvel attribut
+document.getElementByid("pic").setAttribute("title", "objet masqué");
+//un nouvel attribut "title" a été ajouté à l'image
+
+// removeAttribute supprime un attribut
+document.getElementByld("pic"). removeAttribute("title"); // title est finalement supprimé
+}
+// ]]>
+</script>
+
+ <h4>Modifier tout le contenu d'un noeud :   </h4>
+    <p><br />
+      &lt;div id=&quot;target&quot;&gt;the content of the div<br />
+      &lt;p&gt;a paragraph inside the div&lt;/p&gt;<br />
+      &lt;p&gt;another paragraph inside the div&lt;/p&gt;<br />
+      &lt;/div&gt;</p>
+    <p>&nbsp;</p>
+   <pre>
+   document.getElementByid("target").innerHTML = " &lt;p&gt;Only me&lt;/p&gt;";
+// maintenant le div ne contient plus que paragraphe
+// &lt;p&gt;Only me&lt;/p&gt;
+   </pre>
+   
+  </article> 
+<div id="target">the content of the div
+<p>a paragraph inside the div</p>
+<p>another paragraph inside the div</p>
+<script type="text/javascript">
+//<![CDATA[
+
+document.getElementById("target").innerHTML = " <p>Only me</p>";
+// ]]>
+</script>
+</div>
+</body>
+</html>

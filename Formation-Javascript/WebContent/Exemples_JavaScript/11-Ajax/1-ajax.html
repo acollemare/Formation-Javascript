@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-ajax.html"> 1 Ajax</a>
+        <a href="2-liens.html"> 2 liens</a>
+        <a href="lightbox/index.htm"> Lightbox</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Asynchronous JavaScript And XML (AJAX) :   </h4>
+    <br /> <br />
+     Utilise des objets JavaScript permettant de faire des requêtes asynchrones.<br />
+     • L'idée et d'améliorer l'expérience utilisateur:<br />
+     • en émettant des requêtes HTTP qui ne récupèrent que des fragments de données, ce qui évite des rechargements complets de pages.<br />
+     • en émettant ces requêtes de manière asynchrone ce qui permet à l'utilisateur de continuer d'interagir avec le document chargé dans le navigateur, pendant que le navigateur fait la requête &quot;en arrière plan&quot;.
+    <br />
+    
+ <div id="div1"><h4>Let jQuery AJAX Change This Text</h4></div>
+<button>Get External Content</button>
+    
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("autre.txt",function(responseTxt,statusTxt,xhr){
+      if(statusTxt=="success")
+        alert("External content loaded successfully!");
+      if(statusTxt=="error")
+        alert("Error: "+xhr.status+": "+xhr.statusText);
+    });
+  });
+});
+// ]]>
+    </script></article> 
+</body>
+</html>

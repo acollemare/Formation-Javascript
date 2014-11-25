@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-noeuds.html"> 2 noeuds</a>
+        <a href="3-dom-html.html"> 3 DOM Html </a>
+        <a href="4-modifier-noeuds.html"> 4 modif node</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>DOM et Html :   </h4>
+    <p><br />
+      Norme définissant un document du web.<br />
+      • Est spécifiée en terme de DOM.<br />
+      • HTML donne un sens à des éléments.<br />
+      • Le DOM HTML fourni:<br />
+  
+      • un sens aux éléments du DOM (type de nodes): p, div, a, ...<br />
+      • des APis relatives à la manipulation des éléments du<br />
+      DOM: nouveaux objets dits &quot;host&quot; (window, document, navigator, ... ),<br />
+nouvelles propriétés (className, ... )<br />
+      • des restrictions sur les éléments, par ex: les enfants d'un<br />
+      ul doivent être des li.
+      <br />
+      <br />
+      Parmi les principales interfaces définies par le DOM<br />
+      HTML, deux sont très utilisées lorsque l'on programme en JavaScript:<br />
+      • Document, qui représente le contenu de la page web courante.<br />
+      • Window, qui représente la fenêtre dans laquelle le document est chargé.
+    <p>        
+    <pre>
+    
+   </pre>
+   </article> 
+   <script type="text/javascript">
+//<![CDATA[
+var nombre=document.all.length;
+	 var ilinks=document.links.length;
+	 alert("Le nombre d'éléments présents dans le code de cette page est de :"+nombre);
+	 alert("Le nombre de liens présents dans la page est de :"+ilinks);
+	 for (i=0;i<nombre;i++){nbrlinks=document.links[i];
+							nomelement=document.all[i].tagName;
+							afficheelement="Le nom de l'élément "+i+" est "+nomelement;
+							
+							console.log(afficheelement);
+							
+							}
+							for (i=0;i<ilinks;i++){nbrlinks=document.links[i];
+							affichelinks="Le nom du lien "+i+" est "+nbrlinks;
+							console.log(affichelinks);
+							}
+
+
+
+// ]]>
+</script>
+
+</body>
+</html>

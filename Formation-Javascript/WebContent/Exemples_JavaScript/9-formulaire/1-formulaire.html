@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>9-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-formulaire.html"> 1 formulaire</a>
+        <a href="2-valeurs.html"> 2 Valeurs</a>
+         <a href="3-exemple.html"> 3 exemple </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Formulaire :   </h4>
+    <br /> <br />
+document.forms donne accès à tous les formulaires du document.<br /> <br />
+•<strong> document.forms[&quot;formname&quot;]</strong> donne accès à un formulaire par son attribut name.<br />
+<br />
+<strong>document.forms[&quot;formname&quot;].submit()</strong><br /> 
+&nbsp;• Pour soumettre un formulaire.<br />
+&nbsp; &nbsp; • Attention la soumission du formulaire via submit()
+ne déclenche pas l'event handler onsubmit.<br />
+<strong><br />
+document.forms[&quot;formname&quot;].action = 'url';</strong><br />
+&nbsp; &nbsp; • Pour changer l'action du formulaire.<br /><br />
+
+<strong>documents.forms["formname"].elements["elementname"]</strong><br />
+donne accès à un élément du formulaire par son attribut name
+<form id="form1" name="form1" method="" action="" >
+  <p>
+    <input name="nom" type="color" id="nom2" required autofocus onBlur="controlevide()" 
+	placeholder="merci de saisir">
+  </p>
+  <p>
+    <input type="submit" name="Submit" value="Envoyer" onClick="controlevide()" />
+      </p>
+</form>
+</article> 
+<script type="text/javascript">
+//<![CDATA[
+function controlevide()
+{
+if(form1.nom.value =='') {
+alert("ce champ est vide");
+}
+else {
+alert("ce champ n'est pas vide");
+}
+}
+// ]]>
+   </script>
+</body>
+</html>

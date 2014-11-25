@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Controle_case_a_cocher</title>
+<script language="javascript">
+function controlecaseacocher()
+{
+if((form1.marche.checked ==true) && (form1.vp.checked ==true))
+alert("C'est bien de marcher de temps en temps");
+else if(form1.vp.checked ==true)
+alert("Ce n'est pas bon pour l'environnement");
+else if(form1.marche.checked ==true)
+alert("La marche est bonne pour la santé");
+else alert("Répondez en cochant au moins une case");
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="" action="" >
+  <p>&nbsp;  </p>
+  <table width="643" border="0">
+    <tr>
+      <td width="633">Quel mode de transport utilisez-vous pour vous rendre sur votre lieu de travail ?      </td>
+    </tr>
+    <tr>
+      <td><input name="marche" type="checkbox" id="marche" va-lue="checkbox"> 
+        Marche </td>
+    </tr>    
+    <tr>
+      <td><input name="vp" type="checkbox" id="vp" value="checkbox">
+      V&eacute;hicule personnel </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>
+    <input type="submit" name="Submit" value="Envoyer" onClick="controlecaseacocher()" />
+      </p>
+</form>
+</body>
+</html>
+

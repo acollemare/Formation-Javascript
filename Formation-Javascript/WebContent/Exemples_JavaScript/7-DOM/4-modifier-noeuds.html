@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        
+        <a href="3-dom-html.html"> 3 DOM Html </a>
+        <a href="4-modifier-noeuds.html"> 4 modif node</a>
+        <a href="5-modif.html"> 5 modifier</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Accéder &agrave; des noeuds :   </h4>
+    <p><br />
+    <p>        
+    <pre>&lt;div id=&quot;header&quot; &gt;<br />  &lt;hl&gt;&lt; ahref=&quot;/&quot; id=&quot;homelink&quot; &gt;Title of your site &lt;/a&gt;&lt;/hl &gt;<br />&lt;/div &gt;<br />&lt;div id=&quot;content&quot;&gt;<br />  &lt;p class=&quot;dropcap hudge&quot;&gt;Content paragraphe./p&gt;<br />  &lt;p id=&quot;e&quot; class=&quot;dropcap&quot;&gt;Content &lt;span class=&quot;hudge&quot;&gt; paragraph &lt;/span &gt;&lt;/p&gt;<br />  &lt;p class=&quot;dropcap&quot;&gt;Content paragraphe./p&gt;<br />&lt;/div&gt;
+<br /><br />    
+// getELementByld: retourne un élément
+// très performant, présent historiquement et donc supporté par une grande majorité de navigateurs
+document.getELementByld("header") ;
+document.getELementByld("homelink");
+
+// getELementBytagName: retourne une nodelist (la propriétè length d'une nodelist indique le nombre d'élément dans la liste)
+//  présent historiquement et donc supporté par une grande majorité de navigateurs
+
+document.getELementBytagName("p" ) ;
+// getELementByClassName :retourne une nodelist
+//Ajout récent support dans les navigateurs modernes IE > 9, FF > 3  Chrome > 4, Opera > 9.5, Safari > 3.1
+
+document.getELementByClassName("dropcap"); // Tous Les éléments avec la class dropcap ( 3)
+document.getELementByClassName("dropcap hudge"); // Tous Les éléments avec la class dropcap ET hudge ( 1)
+document.getELementByld("e").document.getELementByClassName("hudge") ; // tous Les éléments avec la  classe hudge et qui sont dans les éléments d'id "e" ( 1)
+
+
+// Acces par selecteusr  CSS
+//Ajout récent support dans les navigateurs modernes IE > 9, FF > 3  Chrome > 4, Opera > 9.5, Safari > 3.1
+
+document.querySelector : retourne le premier élement identifié par le selecteur CSS
+document.querySelector ("#header"); // Le premier élément avec un id "header"
+document.querySelector ( ".dropcap"); // Le premier élément avec un classe  "dropcap "
+
+// querySelectorAll: retourne une node liste de tous Les éléments identifiés par le selecteur CSS
+document.querySelectorAll (".dropcap" ) ; // tous les paragraphes avec une classe "dropcap"
+document.querySelectorAll(".dropcap, .huge") ; // tous les éléments avec une classe "dropcap" ou "hudge"
+document.querySelectorAll("p[class]"); // tous Lesparagraphes qui ont une classe 
+    </pre>
+</article> 
+</body>
+</html>

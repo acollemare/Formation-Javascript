@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header id="header">
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-css.html"> 1 CSS</a>
+        <a href="2-exemple.html"> 2 Exemple</a>
+         <a href="3-association.html"> 3 Association </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Feuille de Style en Cascade :   </h4>
+    <br /> <br />
+    <pre>
+    //modification propriété via element.style
+    element.style.width="150px";
+    <strong>element.style.backgroundColor</strong>= 'blue'; // background-color invalide car non autorisé dans identifiants JavaScript<br />
+    <strong>document.body.style.setProperty</strong>("background-color", "red");// recommendé par le W3C
+    
+    
+    //Attention La propriéte style ne contient pas Les valeurs définies dans Les feuilles de styles 
+     mais juste dabs la balise
+    //Il faut utiliser <strong>getComputedStyles()</strong> ou propriété <strong>currentStyle</strong> pour IE.
+    
+    var text = <strong>document.getElementByid</strong>('text'),
+    color = <strong>getComputedStyle</strong>(text , null).color;
+    // ou bien color = <strong>text.currentStyle.color</strong>;
+    
+    
+    // La meileure pratique consiste, si possible, à definir Les styles dans ses feuilles de styles
+ externes et à modifier les classes des éléments du DOM.
+    // par exemple
+    
+    element.className +="reveal" ;// Native
+    element.classList.add("reveal")// HTML5
+    
+    </pre>
+    
+    <script type="text/javascript">
+//<![CDATA[
+// je recupère la couleur
+var entete = document.getElementById('header'),
+      color = getComputedStyle(entete, null).backgroundColor;
+   
+  alert(color);
+  //je modifie la couleur
+  entete.style.backgroundColor = "#ff0";
+  entete.style.color = "#0f0";
+  entete.style.fontSize = "0.2em";
+  entete.style.textAlign = "right";
+// ]]>
+    </script></article> 
+</body>
+</html>

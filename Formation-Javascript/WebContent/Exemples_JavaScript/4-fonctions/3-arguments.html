@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>4-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-appel.html"> 2 Appel</a>
+        <a href="3-arguments.html"> 3 Arguments </a> 
+        <a href="4-conditionnelles.html"> 4 Conditionnelles</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Fonctions :   </h4>
+    <p><br /> 
+    <br />
+    Les arguments d'une fonction sont stockés dans un<br />
+    objet arguments ressemblant à un array.<br />
+    • arguments[0] est le premier argument de la fonction.<br />
+    • arguments[i] est le ième argument de la fonction.<br />
+    • arguments.length donne le nombre d'arguments<br />
+    passés à la fonction.</p>
+    <p>En utilisant arguments, il est par exemple possible: <br />
+    • d'utiliser une fonction avec plus d'arguments qu'elle est déclarée pouvoir recevoir.<br />
+    • de définir des fonctions avec un nombre variable d'arguments.</p>
+    <p><br>
+    </p>
+    <pre>
+   function myConcat(separator) {
+   var result = &quot;&quot;; // initialise La String resultat
+      // itère à travers Les arguments
+      for (var i = 1; i &lt; arguments.length ; i ++) {
+      result += arguments[i] + separator; //concatène les arguments et le séparateur'
+      }
+   return result;
+      }
+      
+      document.write(myConcat(&quot;, &quot;,&quot;red&quot;, &quot;orange&quot;, &quot;blue&quot;));
+      document.write(myConcat(&quot;;  &quot;, &quot;elephant&quot;, &quot;giraffe&quot;, &quot;lion&quot;, &quot;cheetah&quot;));
+      document.write(myConcat(&quot;. &quot;,&quot;sage&quot;, &quot;basil &quot; , &quot;oregano&quot;, &quot;pepper&quot;, &quot; parsley&quot; ));
+</pre>
+  <script type="text/javascript">
+//<![CDATA[
+
+function myConcat(separator) {
+
+var result = ""; // initialise La String resultat
+// itère a travers Les arguments
+for (var i = 1; i < arguments.length ; i ++) {
+result += arguments[i] + separator; //concatène les arguments et le séparateur'
+}
+
+return result;
+}
+// returns "red, oranqe, bLue, "
+document.write(myConcat(", ","red", "orange", "blue"));
+
+// returns  "elephant giraffe lion cheetah"
+document.write(myConcat(";  ", "elephant", "giraffe", "lion", "cheetah"));
+// retuns soge. basil. oregano. pepper. parsley.
+document.write(myConcat(". ","sage", "basil " , "oregano", "pepper", " parsley" ));
+
+// ]]>
+  </script>
+</p>
+</article> 
+</body>
+</html>

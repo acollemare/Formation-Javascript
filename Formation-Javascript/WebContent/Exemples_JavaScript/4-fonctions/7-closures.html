@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>4-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="6-scope.html"> 6 scope </a> 
+        <a href="7-closures.html"> 7 Closures</a>
+        <a href="8-error.html"> 8 erreures</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>CLOSURES :   </h4>
+    <br /> 
+    <br />
+    Une closure est créée lorsque la fonction interne est <br />
+    rendue disponible, d'une manière ou d'une autre, à un<br />
+    scope extérieur à la fonction externe.
+    <pre>
+    var  pet = function(name) { // La fonction externe définit une variable "name"
+    var getName = function() {
+    return name;// La fonction interne a accès a la variable "name" de la fonction externe
+    }
+    return <strong>getName;</strong> //Retourne la function interne et donc l'expose aux scopes externes
+    } ;
+    var myPet = pet("Rex");
+    myPet (); // Retourne "Rex"
+
+</pre>
+
+  <script type="text/javascript">
+//<![CDATA[
+function externe (parametre) {
+	var var1 = parametre ;
+		function interne () {
+			var var2 = 10 ;
+			resultat = var1 + var2;
+			console.log("l'addition des deux variables des deux fonctions est : "+resultat);
+		}
+	return interne;
+	}
+var affiche = externe(1);
+
+affiche();
+// ]]>
+  </script>
+
+</article> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>manipulation_liste_multiple</title>
+<script language="javascript">
+function maniplistemultiple()
+{
+var ville="";
+nb=form1.liste_ville.length;
+i=form1.liste_ville.selectedIndex;
+for (i = 0;i<nb;i++){
+if(form1.liste_ville.options[i].selected){
+ville=form1.liste_ville.options[i].value;
+alert(ville+" est sélectionnée");
+}
+}
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="" action="" >
+  <table width="146" border="0">
+    <tr>
+      <td width="140" height="108"><select name="liste_ville" size="5" multiple id="liste_ville">
+        <option value="Paris">Paris</option>
+        <option value="Lyon">Lyon</option>
+        <option value="Marseille">Marseille</option>
+        <option value="Lille">Lille</option>
+        <option value="Strasbourg">Strasbourg</option>
+      </select>      </td>
+    </tr>
+    <tr>
+      <td><input type="button" name="Submit" value="S&eacute;lectionner" onClick="maniplistemultiple()"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>5-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="4-contructeur.html"> 4 constructeur</a> 
+        <a href="5-this.html"> 5 this</a>
+        <a href="6-heritage.html"> 6 Heritage </a> 
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>This :   </h4><br />
+    Pour définir une propriété donnée ou une fonction nous utilisons dans le corps de la fonction me mot clé <strong>this</strong><br /><br />
+    <pre >
+    Personne ( non, prenom) {
+	this.nom = nom;
+    this.prenom = prenom;
+    this.replique = function () {
+    	document.write("je suis ton père" + this.prenom);
+      };
+    }
+    var p1= new Personne ( "Skywalker", "Luke");
+    p1.replique();
+
+</pre>
+
+  
+      
+     <script type="text/javascript">
+	//<![CDATA[
+    function Personne( nom, prenom ) {
+	this.nom = nom;
+    this.prenom = prenom;
+    	this.replique = function() {
+    	document.write("je suis ton père ... " + this.prenom);
+      };
+    }
+    var p1= new Personne( "Skywalker", "Luke");
+    p1.replique();
+// ]]>
+   </script>
+     
+</article> 
+</body>
+</html>

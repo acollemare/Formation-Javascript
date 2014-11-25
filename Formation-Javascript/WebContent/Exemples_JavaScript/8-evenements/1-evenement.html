@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-evenement.html"> 1 Evénements</a>
+        <a href="2-objets.html"> 2 objets</a>
+         <a href="3-association.html"> 3 Association </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Evénement :   </h4>
+    <br />
+      Les événements sont des actions de l'utilisateur, qui vont pouvoir donner  <br />
+      lieu à une interactivité  spécifiques sur des noeuds ciblés.<br />
+        • sont le plus souvent des fonctions callback.<br />
+        Ont accès à un Event Object lorsqu'un évènement survient.<br />
+        • Deux event handlers ne peuvent pas être exécutés au
+même moment car JavaScript est single-threaded. <br />
+La syntaxe d'un gestionnaire d'événement est la suivante :<br />
+<pre>
+onEvenement="Action_Javascript_ou_Fonction();"  
+</pre>
+<br /><br /><table >
+<tr><th>Ev&eacute;nement</th><th>Description</th></tr>
+<tr><td><b>Abort</b> 
+<br />(onAbort)</td><td>Cet &eacute;v&eacute;nement a lieu lorsque l'utilisateur interrompt le chargement de l'image</td></tr>
+<tr><td><b>Blur</b> 
+<br />(onBlur)</td><td>Se produit lorsque l'&eacute;l&eacute;ment perd le focus, c'est-&agrave;-dire que l'utilisateur clique hors de cet &eacute;l&eacute;ment, celui-ci n'est alors plus s&eacute;lectionn&eacute; comme &eacute;tant l'&eacute;l&eacute;ment actif.</td></tr>
+<tr><td><b>Change</b> 
+<br />(onChange)</td><td>Se produit lorsque l'utilisateur modifie le contenu d'un champ de donn&eacute;es.</td></tr>
+<tr><td> <b>Click</b> 
+<br />(onClick)</td><td> Se produit lorsque l'utilisateur clique sur l'&eacute;l&eacute;ment associ&eacute; &agrave; l'&eacute;v&eacute;nement.</td></tr>
+<tr><td> <b>dblclick</b> 
+<br />(onDblclick)</td><td> Se produit lorsque l'utilisateur double-clique sur l'&eacute;l&eacute;ment associ&eacute; &agrave; l'&eacute;v&eacute;nement (un lien hypertexte ou un &eacute;l&eacute;ment de formulaire).</td></tr><tr><td><b>dragdrop</b> 
+<br />(onDragdrop)</td><td>Se produit lorsque l'utilisateur effectue un <i>glisser-d&eacute;poser</i> sur la fen&ecirc;tre du navigateur.</td></tr>
+<tr><td><b>error</b> 
+<br />(onError)</td><td>Se d&eacute;clenche lorsqu'une erreur appara&icirc;t durant le chargement de la page.</td></tr>
+<tr><td><b>Focus</b> 
+<br />(onFocus)</td><td>Se produit lorsque l'utilisateur donne le focus &agrave; un &eacute;l&eacute;ment, c'est-&agrave;-dire que cet &eacute;l&eacute;ment est s&eacute;lectionn&eacute; comme &eacute;tant l'&eacute;l&eacute;ment actif</td></tr><tr>
+<td><b>keydown</b> 
+<br />(onKeydown)</td><td>Se produit lorsque l'utilisateur appuie sur une touche de son clavier.</td></tr><tr><td><b>keypress</b> 
+<br />(onKeypress)</td><td>Se produit lorsque l'utilisateur maintient une touche de son clavier enfonc&eacute;e.</td></tr>
+<tr><td><b>keyup</b> 
+<br />(onKeyup)</td><td>Se produit lorsque l'utilisateur rel&acirc;che une touche de son clavier pr&eacute;alablement enfonc&eacute;e.</td></tr>
+<tr><td><b>Load</b> 
+<br />(onLoad)</td><td>Se produit lorsque le navigateur de l'utilisateur charge la page en cours</td></tr><tr><td><b>MouseOver</b> 
+<br />(onMouseOver)</td><td>Se produit lorsque l'utilisateur positionne le curseur de la souris au-dessus d'un &eacute;l&eacute;ment</td></tr>
+<tr><td><b>MouseOut</b> 
+<br />(onMouseOut)</td><td>Se produit lorsque le curseur de la souris quitte un &eacute;l&eacute;ment.</td></tr><tr><td><b>Reset</b> 
+<br />(onReset)</td><td>Se produit lorsque l'utilisateur efface les donn&eacute;es d'un formulaire &agrave; l'aide du bouton Reset.</td></tr>
+<tr><td><b>Resize</b> 
+<br />(onResize)</td><td>Se produit lorsque l'utilisateur redimensionne la fen&ecirc;tre du navigateur</td></tr>
+<tr><td><b>Select</b> 
+<br />(onSelect)</td><td>Se produit lorsque l'utilisateur s&eacute;lectionne un texte (ou une partie d'un texte) dans un champ de type "text" ou "textarea"</td></tr>
+<tr><td><b>Submit</b> 
+<br />(onSubmit)</td><td>Se produit lorsque l'utilisateur clique sur le bouton de soumission d'un formulaire (le bouton qui permet d'envoyer le formulaire)</td></tr><tr><td><b>Unload</b> 
+<br />(onUnload)</td><td>Se produit lorsque le navigateur de l'utilisateur quitte la page en cours</td></tr></table>
+ </article> 
+ <script type="text/javascript">
+//<![CDATA[
+
+var largeur = screen.width;
+var hauteur = screen.height;
+var couleurs=screen.colorDepth;
+
+alert ("la resolution de votre écran est de "+largeur+" X "+hauteur+" pixel");
+// ]]>
+</script>
+</body>
+</html>

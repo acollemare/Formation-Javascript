@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>5-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="4-contructeur.html"> 4 constructeur</a> 
+        <a href="5-prototype.html"> 5 Prototype</a>
+        <a href="6-heritage.html"> 6 Heritage </a> 
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Prototype :   </h4><br />
+    c&rsquo;est une liste de propriétés, attaché à un constructeur, qui va servir   de « fallback » lorsque l&rsquo;on cherche à accéder à une propriété manquante   d&rsquo;une instance dudit constructeur. <br />
+    Lorsque l&rsquo;on cherche   à accéder à une propriété sur une instance,    le langage  va d&rsquo;abord regarder si l&rsquo;instance contient cette propriété,   et dans le cas contraire, va ensuite vérifier si le prototype de son   constructeur la contient<br /><br />
+    <pre >
+var myClasse = function(){
+     this.name = 'Romain';
+   }
+//Puis ensuite nous allons instancier cet objet :
+
+   var o = new myClasse();
+   console.log(o.name);
+   
+   
+    myClasse.prototype.age = 25;
+    console.log(o.age);
+</pre>
+
+  
+      
+        <script type="text/javascript">
+//<![CDATA[
+var myClasse = function(){
+     this.name = 'Romain';
+   }
+//Puis ensuite nous allons instancier cet objet :
+
+   var o = new myClasse();
+   console.log(o.name);
+   
+   
+    myClasse.prototype.age = 25;
+    console.log(o.age);
+
+
+// ]]>
+   </script>
+     
+</article> 
+</body>
+</html>

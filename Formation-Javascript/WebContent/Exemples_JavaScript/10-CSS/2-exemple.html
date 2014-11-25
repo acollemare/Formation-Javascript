@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header class="header" id="header">
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-css.html"> 1 CSS</a>
+        <a href="2-exemple.html"> 2 exemple</a>
+         <a href="3-position.html"> 3 Position </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Feuille de Style en Cascade :   </h4>
+    <br /> <br />
+<input type="button" value="Changer la couleur de fond en vert"
+onclick="javascript:document.getElementById('div1').style.backgroundColor='#00ff00';" />
+<br />
+<input type="button" value="Changer la couleur de fond en rouge"
+onclick="javascript:document.getElementById('div1').style.backgroundColor='#ff0000';" />
+<br />
+<input type="button" value="Augmenter la largeur"
+onclick="javascript:document.getElementById('div1').style.width=(parseInt(document.getElementById('div1').clientWidth)+25)+'px';" />
+<br />
+<input type="button" value="Diminuer la largeur"
+onclick="javascript:document.getElementById('div1').style.width=(parseInt(document.getElementById('div1').clientWidth)-25)+'px';" />
+<br />
+<input type="button" value="Augmenter la hauteur" onclick="javascript:document.getElementById('div1').style.height=(parseInt(document.getElementById('div1').clientHeight)+25)+'px';" />
+<br />
+<input type="button" value="Diminuer la hauteur"
+onclick="javascript:document.getElementById('div1').style.height=(parseInt(document.getElementById('div1').clientHeight)-25)+'px';" />
+<br />
+<input type="button" value="Augmenter la taille de la police"
+onclick="javascript:document.getElementById('div1').style.fontSize=(parseInt(document.getElementById('div1').style.fontSize)+3)+'px';" />
+<br />
+<input type="button" value="Diminuer la taille de la police"
+onclick="javascript:document.getElementById('div1').style.fontSize=(parseInt(document.getElementById('div1').style.fontSize)-3)+'px';" />
+<br />
+<div id="div1" style="font-size:12px;">
+Cours sur les CSS : <br /><a href="http://www.perdu.com" target="_blank" title="creation site">Vous etes perdu sur internet</a> !
+</div>
+    
+    <script type="text/javascript">
+//<![CDATA[
+function change_class() {
+var btn = document.getElementById("header");
+btn.className= "header2";
+} 
+
+// ]]>
+    </script>
+	<input type="button" value="Test" class="buttonType1" onclick="change_class()" id="btnTest" /> 
+	</article> 
+</body>
+</html>

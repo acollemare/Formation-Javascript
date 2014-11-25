@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>4-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav> 
+        <a href="7-closures.html"> 4 Closures</a>
+        <a href="8-error.html"> 8 erreurs</a>
+        <a href="../5-objets/1-objets.html"> &gt; &gt; </a> 
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>ERROR :   </h4>
+    <p><br /> 
+    <br />
+    Créé des instances représentant une erreur<br />
+    • Ces instances fournissent un ensemble standard d'informations utiles quand une erreur survient:<br />
+    • message d'erreur.<br />
+    • nom de la classe de l'erreur.<br />
+    • stack trace.</p>
+    <p>&nbsp;</p>
+    <pre>
+    var error = new error ("The error message");
+    console.log (error);
+    console.log (error.message);
+    console.log (error.stack);
+
+</pre>
+
+  <script type="text/javascript">
+//<![CDATA[
+ var error = new Error ("toto");
+    console.log (error);
+    console.log (error.message);
+    console.log (error.stack);
+// ]]>
+  </script>
+
+</article> 
+</body>
+</html>

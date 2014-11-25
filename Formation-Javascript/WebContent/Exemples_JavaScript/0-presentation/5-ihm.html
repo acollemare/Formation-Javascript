@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>0-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="4-c.html"> 4 C</a>
+        <a href="5-ihm.html"> 5 interface</a>
+        <a href="../1-variables/1-declaration.html"> &gt; &gt;</a>
+    </nav>
+    
+</header>
+     
+    
+  <article> 
+  
+<h4>IHM </h4>
+  <br />
+  Trois possibilités, plus ou moins pauvres <br /><br />
+  
+  <h4>Alerte</h4>
+<pre>
+
+alert( "Phrase \n Deuxième ligne");
+if( confirm( "Etes vous d'accord?"))
+retour= prompt( "Votre nom?","valeur par défaut");
+ </pre>
+<button onclick="myFunction()">Try it</button>
+<script type="text/javascript">
+//<![CDATA[
+alert( "Phrase \n Deuxième ligne");
+
+function myFunction() {
+var x;
+var r=confirm("Press a button!");
+if (r==true)
+  {x="You pressed OK!"; }
+else
+  {x="You pressed Cancel!";}
+};
+
+alert= prompt( "Votre nom?","valeur par défaut");
+// ]]>
+   </script><br /><br />
+<h4>console.log</h4><br /><br />
+     La fonction la plus courante est sans conteste console.log() qui permettra d'afficher un message, <br>
+une chaîne de texte, voire le contenu d'une variable (objet, tableau) de manière détaillée, via la console du navigateur<strong>(F12)</strong>. <br />Les anciens navigateurs tels qu'Internet Explorer 6 et 7 n'en comportent pas.
+<pre>
+
+console.log("Kiwi"); 
+console.log(3+3); 
+var fruit = "kiwis";  
+var mavariable = "J'aime les "+fruit;  
+console.log(mavariable); 
+</pre>
+<script type="text/javascript">
+//<![CDATA[
+console.log("Kiwi"); 
+console.log(3+3); 
+var fruit = "kiwis";  
+var mavariable = "J'aime les "+fruit;  
+console.log(mavariable);
+// ]]>
+   </script>
+   
+  <br /><br />
+<h4>document.write</h4><br /><br />
+     Ecrit le paramètre texte dans le document, à la position de l'appel du script.<br />
+Le paramètre texte peut être une chaîne de caractères classiques, du code HTML et même du javascript.
+<br />
+Pour afficher un texte sur plusieurs lignes, il faut concaténer la chaîne "&lt;br /&gt;" au paramètre texte.<br />
+L'utilisation de writeln() permet pas de créer un saut de ligne HTML
+<pre>
+document.write(&quot;&lt;TABLE border=1&gt;&lt;TR&gt;&quot;);    
+for (var i=0; i&lt;5; i++) {        
+     document.write(&quot;&lt;TD&gt;&quot;+Math.random()+&quot;&lt;/TD&gt;&quot;);
+     }    
+document.write(&quot;&lt;/TR&gt;&lt;/TABLE&gt;&quot;);</pre>
+<br />
+<script type="text/javascript">
+//<![CDATA[
+ document.write("<TABLE border=1><TR>");
+   for (var i=0; i<5; i++) {
+       document.write("<TD>"+Math.random()+"</TD>");
+   }
+   document.write("</TR></TABLE>");
+// ]]>
+   </script>
+</body>
+</html>

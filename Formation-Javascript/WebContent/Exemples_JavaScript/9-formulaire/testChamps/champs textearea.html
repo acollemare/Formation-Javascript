@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>manipulation_champs_textearea</title>
+<script language="javascript">
+function manipchamptextearea()
+{
+form1.Total_champ.value=form1.champ1.value+form1.champ2.value+'\n'+form1.champ3.value;
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="" action="" >
+  <table width="400" border="0">
+    <tr>
+      <td>champ1</td>
+      <td><input name="champ1" type="text" id="champ1"></td>
+    </tr>
+    <tr>
+      <td>champ2</td>
+      <td><input type="text" id="champ2"></td>
+    </tr>
+    <tr>
+      <td>champ3</td>
+      <td><input name="champ3" type="text" id="champ3"></td>
+    </tr>
+    <tr>
+      <td>Total champ </td>
+      <td><textarea name="Total_champ" cols="15" rows="2" id="Total_champ"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" name=" Concatener " value="Concatener" onClick="manipchamptextearea()"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

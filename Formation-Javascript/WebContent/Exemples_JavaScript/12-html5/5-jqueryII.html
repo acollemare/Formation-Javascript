@@ -1,0 +1,56 @@
+<html>
+	<head>
+	<title>12-Javascript</title>
+	<link href="style.css" rel="stylesheet" type="text/css" media="all">
+	<meta name="author" content="Stephane Brunet" />
+	<script src="jquery-1.11.1.js"></script>  
+
+	</head>
+<body>
+  <header>
+    <div><h1>Javascript et HTML5</h1></div>
+    <nav>
+		<a href="4-jquery.html"> 4 jquery</a>
+		<a href="5-jqueryII.html"> 5 jquery II</a>
+		<a href="6-angular.html">6 Angular</a>
+    </nav>
+  </header>
+  <article>
+   <br />
+      
+       
+    <h4>Jquery :   </h4>
+    <br /> <br />
+     <section>
+	 jQuery est un framework utilisant "presque" du JavaScript et permettant <br />
+	 de solutionner certains probl&egrave;mes d'incompatibilit&eacute; entre les diff&eacute;rents navigateurs… <br />
+	 
+	 Tout d'abord, il convient de ne pas invoquer des fonctions et autres m&eacute;thodes de jQuery avant que le DOM (Document Object Model) ne soit charg&eacute;. 
+	 Donc tout notre code jQuery sera &eacute;crit entre les lignes suivantes
+	 <p> Et pour afficher l'image dans le html :</p>
+	 
+	 <p><img src="pacoff.png" class="echange" /></p>
+			<!-- contenu -->
+				
+			</section>
+    <br />
+
+<script type="text/javascript">
+	 //<![CDATA[
+	
+		$(document).ready(function(){
+			$(function () {
+				 $('img.echange').hover(function () {
+					$(this).css("cursor", "pointer");
+					this.src = 'pacman.jpg';
+					}, 
+				function () {
+				this.src = 'pacoff.png';
+				});
+			});
+		});
+
+		// ]]>
+	</script></article> 
+</body>
+</html>

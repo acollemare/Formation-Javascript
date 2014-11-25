@@ -1,0 +1,2 @@
+<h4>jQuery and AJAX is FUN!</h4>
+<p id="p1">nouveau texte affich&eacute;</p>

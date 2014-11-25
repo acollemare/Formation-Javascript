@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>5-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="7-heritage-synthese.html"> 7 héritage prototype</a>
+        <a href="8-heritage-constructeur.html"> 8 Héritage constructeur</a> 
+        <a href="9-exemple.html"> 9 Heritage exemple </a> 
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Heritage constructeur :   </h4><br />
+    <p>Constructeur et prototype<br />
+    </p>
+    <pre>
+function toto() {
+this.x = 5;
+}
+// new
+// 1) crée un nouveL objet
+// 2) exécute La fonction toto avec this = Le nouveL objet
+// 3) nouvelObjet . [[Prototype]] = toto . prototype
+// 4) retourne Le nouvel objet ce qui fait que a = nouvelObjet
+// a possède donc les propriétés définies dans toto
+// Le [[Prototype]] de a est toto.prototype
+var a = new toto();
+console.log(Object.getPrototypeOf(a) === toto.prototype ) ; // true
+console.log(Object.getPrototypeOf(a)); // toto {}
+var b = new toto();
+a.x = 32;
+console.log(a. x) ; // 32
+console.log(b. x) ; // 5
+
+</pre>
+<script type="text/javascript">
+//<![CDATA[
+
+function toto() {
+this.x = 5;
+}
+
+var var_a = new toto();
+console.log(Object.getPrototypeOf(var_a) === toto.prototype ) ; 
+console.log(Object.getPrototypeOf(var_a)); 
+var b = new toto();
+var_a.x = 32;
+console.log(var_a. x) ;
+console.log(b. x) ; 
+
+// ]]>
+   </script>
+    
+</article> 
+</body>
+</html>

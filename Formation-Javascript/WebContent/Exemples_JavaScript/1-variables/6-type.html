@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>1-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="5-locale-globale.html"> 5 encodeURI </a>
+        <a href="6-type.html"> 6 Type</a>
+        <a href="7-number.html"> 7 Nombre</a>
+    </nav>
+  </header>
+  <article>
+    <p><strong> Type :</strong></p><br />
+      
+       <h4>undefined :   </h4><br />Une variable est du type undefined
+       <pre>       var jeSaisPas = undefined; </pre>
+       <br />
+       <h4>number :   </h4><br />
+       JavaScript réunit en un seul type les entiers, petits et grands, les décimaux, et les réels, flottants ou pas
+       <pre>       r = 1/3;
+       alert(r);         // affiche 0.333333333333
+       alert(typeof r); // affiche number</pre>
+       <br />
+       <h4>string :   </h4><br />
+       Le type string stocke une chaîne de caractères.<br /> C'est aussi le type le plus "faible" du langage : n'importe quelle valeur peut être convertie en chaîne, <br />et en cas de doute avec l'opérateur +, c'est une concaténation qui aura lieu, pas une addition.
+       <pre>      var s = "Une chaîne de caractères";
+       alert(typeof s); // Affiche "string"</pre>
+       <br />
+<h4>boolean :   </h4><br />
+       Une variable de type boolean accepte deux valeurs : vrai et faux
+       <pre>        var b = true;
+       alert(typeof b); // Affiche "boolean"
+       var c = (5 == 3); // est faux, mais l'expression est booléenne.
+       alert(typeof c); // Affiche "boolean"</pre>
+  
+  </article>
+<script type="text/javascript">
+//<![CDATA[
+
+
+// ]]>
+</script>
+  
+</body>
+</html>

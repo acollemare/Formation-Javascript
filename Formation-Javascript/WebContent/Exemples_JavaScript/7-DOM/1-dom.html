@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-dom.html"> 1 DOM</a>
+        <a href="2-noeuds.html"> 2 noeuds</a>
+        <a href="3-dom-html.html"> 3 DOM Html </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>DOM :   </h4>
+    <p><br /> 
+    <br />
+    Le Modèle Objet de Document, ou <acronym title="Document Object Model">DOM</acronym>, <span lang="en">Document Object Model</span> est un outil permettant l'accès aux documents HTML et XML.<br />
+Il permet deux choses au développeur :               
+    <p>    
+    <ul>
+      <li>
+        <p>Il fournit une représentation structurée du document ;</p>
+      </li>
+      <li>
+        <p>Il codifie la manière dont un script peut accéder à cette structure.</p>
+        <p>&nbsp;</p>
+      </li>
+    </ul>
+    <p>Il s'agit donc essentiellement d'un moyen de lier une page Web, par exemple, à un langage de programmation ou de script.</p>
+    <p>&nbsp;</p>
+    <p>Il est à remarquer que le DOM ne désigne pas une application particulière, ou bien un produit spécifique ou une présentation  propriétaire d'une page Web ou, plus généralement, à un document écrit dans un langage de balisage (comme XML par exemple).<br />
+Il s'agit d'une interface qui permet de standardiser les moyens d'accès à un document balisé, notamment une  page Web<br /><br />
+
+Le DOM représente un document sous la forme d'un arbre de noeuds (tree of nodes).<br />
+• Certains noeuds peuvent avoir des noeuds enfants .<br />
+• Certains noeuds sont des feuilles (pas d'enfants)</p>
+
+ <h4>HTML </h4>
+    <p>&lt;!DOCTYPE html&gt;<br />
+      &lt;html class=e&gt;<br />
+    &lt;head&gt;</p>
+    <p> &lt;title&gt;Aliens?&lt;/title&gt;</p>
+    <p>&lt;/head&gt;<br />
+      &lt;body&gt;Why yes.</p>
+    <p>&lt;/body&gt;<br />
+      &lt;/html&gt;</p>
+    <h4>Arbre </h4>
+    <pre>
+    Document
+      Doctype : html
+        Element: html class="e"
+          Element: title
+            Text: Aliens ?
+          Text
+          Element: body
+             Text: Whay Yes.
+   </pre>
+</article> 
+</body>
+</html>

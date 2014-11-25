@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+<style type="text/css">
+  #parent, #child {
+    position: absolute;
+    top: 250px; left: 300px;
+  }
+   
+  #parent {
+    width: 200px; height: 200px;
+    background-color: blue;
+  }
+   
+  #child {
+    width: 50px; height: 50px;
+    background-color: red;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+       
+       <a href="2-exemple.html"> 2 exemple</a>
+       <a href="3-position.html"> 3 Position </a>
+       <a href="4-drag.html"> 4 Drag & Drop</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Feuille de Style en Cascade :   </h4>
+    <br /> <br />
+
+ 
+<div id="parent">
+  <div id="child"></div>
+</div>
+ 
+
+    <script type="text/javascript">
+//<![CDATA[
+  var parent = document.getElementById('parent');
+  var child = document.getElementById('child');
+   
+  alert("Sans la fonction de calcul, la position de l'élément enfant par rapport au parent est : \n\n" +
+        'offsetTop : ' + child.offsetTop + 'px\n' +
+        'offsetLeft : ' + child.offsetLeft + 'px');
+   
+   
+   
+  function getOffset(element) { // Notre fonction qui calcule le positionnement complet
+      var top = 0, left = 0;
+     
+      do {
+          top += element.offsetTop;
+          left += element.offsetLeft;
+      } while (element = element.offsetParent); // Tant que « element » reçoit un « offsetParent » valide alors on additionne les valeurs des offsets
+     
+      return { // On retourne un objet, cela nous permet de retourner les deux valeurs calculées
+          top: top,
+          left: left
+      };
+  }
+   
+   
+   
+  alert("Avec la fonction de calcul, la position de l'élément enfant absolue est : \n\n" +
+        'offsetTop : ' + getOffset(child).top + 'px\n' +
+        'offsetLeft : ' + getOffset(child).left + 'px');
+// ]]>
+    </script></article> 
+</body>
+</html>

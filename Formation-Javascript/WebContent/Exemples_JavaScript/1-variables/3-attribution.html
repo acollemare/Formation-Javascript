@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>1-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body onLoad="hello()">
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        
+        <a href="2-locale-globale.html"> 2 Locale Globale</a>
+        <a href="3-attribution.html"> 3 Attribition</a>
+        <a href="4-var-string.html"> 4 Var-String</a>
+    </nav>
+  </header>
+  <article>
+  <pre>
+var string1 = "Hello";
+var string2 = "Au revoir";
+
+alert(string1); //Hello
+alert(string2); // Au revoir
+
+string2 = string1;
+
+alert(string1);//Hello
+alert(string2);//Hello
+
+string1 = "Autre chose";
+
+alert(string1);// Autre chose
+alert(string2);// Hello
+
+
+  </pre>
+  </article>
+<script type="text/javascript">
+//<![CDATA[
+
+var string1 = "Hello";
+var string2 = "Au revoir";
+
+alert(string1);
+alert(string2);
+
+string2 = string1;
+
+alert(string1);
+alert(string2);
+
+string1 = "Autre chose";
+
+alert(string1);
+alert(string2);
+
+
+// ]]>
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+  <div><h1>Javascript</h1></div>
+  <nav>
+  <a href="3-association.html"> 3 Association </a>
+  <a href="4-evenhandler.html"> 4 EvenHandler</a>
+  <a href="5-event.html"> 5 event</a>
+  </nav>
+  </header>
+  <article>
+  <br />
+  <h4> Associer dynamiquement un évènement &agrave; un élément : </h4>
+  <br /> <br />
+Consiste &agrave; ajouter un évènement &agrave; une balise dans la page HTML alors que la page est déjà chargé ou &agrave; une balise HTML creé dynamiquement <br /><br />
+
+<h4> Méthode 1  : </h4>
+la plus ancienne de ces méthode consiste &agrave; appeler l'élément cible et de lui associer l'évènement par le nom de l'évènement et lui adjoindre le nom de la fonction.<br /><br />
+<pre>document.getElementById('mon_element').onclick=nom_de_la_fonction</pre><br />
+<br />
+Compatible même avec les anciens navigateurs et simple a mettre en oeuvre <br />
+le problème de cette méthode est que ne l'on peut adjoindre qu'un seule évènement du meme type par élément 
+<br /><br />
+
+<h4> Methode 2  : </h4>
+la deuxièmement méthode s'appel 'addEventListener' sa syntaxe est légèrement différente<br /><br />
+<pre>document.getElementById('mon_element').addEventListener("click', nom_de_la_fonction, false);</pre><br />
+<span class="ie">Dans IE, il est nécessaire d'utiliser "attachEvent" plutôt que la méthode standard "addEventListener".<br /> Pour que le code fonctionne dans IE&lt;9,</span><br />
+
+<pre>if (var.addEventListener){
+  element.addEventListener('click', modifieTexte, false);
+} else if (element.attachEvent) {
+  element.attachEvent('onclick', modifieTexte);
+}
+</pre>
+<br />
+<br />
+pour retirer l'evenement on utilise 'removeEventListener' 
+<pre>document.getElementById('mon_element').removeEventListener("click', nom_de_la_fonction, false);</pre><br />
+<br /> <br /><br />
+
+<h4> Methode 3  : </h4>
+un événement dans une balise est consideré comme un attribut et pour cette troisieme methode nous allons utiliser 'setAttribute'<br /><br />
+<pre>document.getElementById('mon_element').setAttribute('onclick','nom_de lafonction('paramètre',event)');</pre><br />
+<br />
+la méthode va insérer dans la balise l'évènement de la même manière que si on le faisait soit meme dans la balise on peut rajouter des paramètres et plusieurs fonction pour le même évènement sur l'élément. <br />
+<img src='image.png' id="vendet" />
+<script type="text/javascript">
+//<![CDATA[
+function fonction1()
+{
+ var image;
+ image=document.getElementById('vendet');
+ if (image)
+  {
+   image.style.border='3px dashed #ccc';
+  }
+}
+
+
+document.getElementById('vendet').setAttribute('onclick','fonction1()');
+// ]]>
+</script>
+
+
+ </article> 
+</body>
+</html>

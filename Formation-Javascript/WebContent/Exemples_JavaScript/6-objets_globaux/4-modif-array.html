@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="3-fill-array.html"> 3 alimenter un tableau </a>
+        <a href="4-modif-array.html"> 4 modifier un tableau</a>
+        <a href="5-boolean.html"> 5 Boolean</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Modifier un tableau :   </h4>
+   
+  <pre>
+//<strong>concat()</strong> joint deux tabLeaux et retourne un nouveau tableau\
+var myArray = new Array ("1", "2" , "3");
+myArray = myArray.concat("a" , "b", "c"); // myArray vaut maintenant ["1", "2", "3', "a", "b", "c"]
+
+//<strong>join(déliminator = ", ")</strong> joint tous les éléments d'un tableau en une String.
+var myArray = new Array ("Wind", "Rain", "Fire");
+var list = myArray.join (" - "); // List vaut "Wind - Rain - Fire"
+
+/<strong>/push()</strong> ajoute un ou plusieurs elements à la fin d'un tableau et retourne la nouvelle longueur du tableau.
+var myArray = new Array ("1", "2");
+myArray.push("3"); // myArray vaut maintenant ["1", "2"', "3"}
+
+// <strong>pop()</strong> retire Le dernier elément d'un tabLeau et retourne cet dement.
+var myArray =  new Array("l", "2", "3");
+var  last= myArray.pop(); // myArray vaut maintenant {"1", "2"], last = "3"
+
+// <strong>shift()</strong> retire Le premier élément d'un tabLeau et retourne cet élément.
+var myArray = new Array ("1", "2", "3");
+var first = myArray.shift(); // myArray vaut maintenant {"2", "3"}, first = "l"
+
+// <strong>unshift()</strong> ajoute un ou plusieurs; éléments au début d'un tableau et retourne la nouvelle Longueur du tabLeau .
+var myArray = new Array ("1", "2", "3");
+myArray.unshift("4", "5"); //myArray devient ["4", "5", ''1 ", "2", '3')
+
+// <strong>slice</strong>(start_ index, upto_ index) extrait une section d'un tableau et retourne un nouveau tableau.
+var myArray =new Array ("a", "b", "c", "d", "e");
+myArray = myArray.slice(1, 4); /* démarre à l'index 1 et extrait tous Les éléments jusqu'a L'index 3, retourne [ "b", "c", "d") */
+
+// <strong>splice</strong>(index, count_to_remove, addelementl, addelement2, .. . ) retire Les éléments d'un tableau et (optionnel) Les remplace.
+var myArray = new Array ("1", "2", "3", "4", "5");
+myArray.splice(1, 3, "a", "b", "c", "d"); // myArray = ["1", "a", "b", "c", "d", '5"]
+
+// <strong>reverse</strong>() inverse [es elements d'un tableau.
+var myArray = new Array ("1", "2", "3");
+myArray.reverse(); // myArray = [ "3", "2", "1")
+
+// <strong>sort</strong>() trie Les éléments du tableau .
+var myArray = new Array ("Wind", "Rain", "Fire" );
+myArray.sort(); // myArray ~ [ "Fire", "Rain", "Wind"]
+</pre>
+    <script type="text/javascript">
+//<![CDATA[
+
+var myArray = new Array ("1", "2" , "3");
+myArray = myArray.concat("a" , "b", "c"); // myArray vaut maintenant ["1", "2", "3', "a", "b", "c"]
+//join(déliminator = ", ") joint tous les éléments d'un tableau en une String.
+var myArray = new Array ("Wind", "Rain", "Fire");
+var list = myArray.join (" - "); // List vaut "Wind - Rain - Fire"
+//push() ajoute un ou plusieurs elements à la fin d'un tableau et retourne la nouvelle longueur du tableau.
+var myArray = new Array ("1", "2");
+myArray.push("3"); // myArray vaut maintenant ["1", "2"', "3"}
+// pop() retire Le dernier elément d'un tabLeau et retourne cet dement.
+var myArray =  new Array("l", "2", "3");
+var  last= myArray.pop(); // myArray vaut maintenant {"1", "2"], last = "3"
+// shift() retire Le premier élément d'un tabLeau et retourne cet élément.
+var myArray = new Array ("1", "2", "3");
+var first = myArray.shift(); // myArray vaut maintenant {"2", "3"}, first = "l"
+// unshift() ajoute un ou plusieurs; éléments au début d'un tableau et retourne la nouvelle Longueur du tabLeau .
+var myArray = new Array ("1", "2", "3");
+myArray.unshift("4", "5"); //myArray devient ["4", "5", ''1 ", "2", '3')
+
+// slice(start_ index, upto_ index) extrait une section d'un tableau et retourne un nouveau tableau.
+var myArray =new Array ("a", "b", "c", "d", "e");
+myArray = myArray.slice(1, 4); /* démarre à l'index 1 et extrait tous Les éléments jusqu'a L'index 3, retourne [ "b", "c", "d") */
+// splice(index, count_to_remove, addelementl, addelement2, .. . ) retire Les éléments d'un tableau et (optionnel) Les remplace.
+var myArray = new Array ("1", "2", "3", "4", "5");
+myArray.splice(1, 3, "a", "b", "c", "d"); // myArray = ["1", "a", "b", "c", "d", '5"]
+
+// reverse() inverse [es elements d'un tableau.
+var myArray = new Array ("1", "2", "3");
+myArray.reverse(); // myArray = [ "3", "2", "1")
+
+// sort() trie Les éléments du tableau .
+var myArray = new Array ("Wind", "Rain", "Fire" );
+myArray.sort(); // myArray ~ [ "Fire", "Rain", "Wind"]
+// ]]>
+</script>
+ 
+
+</article> 
+</body>
+</html>

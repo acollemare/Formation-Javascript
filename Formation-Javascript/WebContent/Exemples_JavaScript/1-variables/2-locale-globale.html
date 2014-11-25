@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>1-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+       <a href="1-declaration.html"> 1 D&Eacute;claration</a>
+        <a href="2-locale-globale.html"> 2 Locale Globale</a>
+        <a href="3-attribution.html"> 3 Attribution</a>
+    </nav>
+  </header>
+  <article>
+    <br />
+    
+     <h4>Nommage et portée :   </h4>
+     <br />
+    un nom de variable doit commencer par une lettre (majuscule ou minuscule) ou un "_"
+
+    <br>
+    un nom de variables peut comporter des lettres, des chiffres et les caractères _ et & 
+	(les espaces ne sont pas autorisés!) 
+    <br>
+    <br>
+    Les noms de variables ne peuvent pas être les noms suivants (qui sont des noms réservés) :<br>
+
+    <ul>
+      <li>abstract </li>
+      <li>boolean break byte </li>
+      <li>case catch char class const continue </li>
+      <li>debugger default delete do double </li>
+      <li>else export extends </li>
+      <li>false final finally float for function </li>
+      <li>goto </li>
+      <li>if, implements, import, in, infinity, instanceof, int, interface </li>
+      <li>label, long </li>
+      <li>native, new, null </li>
+      <li>package, private, protected, public </li>
+      <li>return </li>
+      <li>short, static, super, switch, synchronized </li>
+      <li>this, throw, throws, transient, true, try, typeof </li>
+      <li>var, void, volatile </li>
+      <li>while, with </li>
+    </ul>
+  </article>
+<script type="text/javascript">
+//<![CDATA[
+/*    un nom de variable doit commencer par une lettre (majuscule ou minuscule) ou un "_"
+
+    un nom de variables peut comporter des lettres, des chiffres et les caractères _ et & 
+	(les espaces ne sont pas autorisés!) 
+	*/
+
+  	// variable globale
+	var a = 1;
+	// variable locale dans une fonction
+	function f() {
+		var b = 2;
+		// variable global meme si dans la fonction
+		c=3;
+	}
+alert(a);
+//autre 
+alert(window.a)
+alert(b);
+
+// ]]>
+</script>
+  
+</body>
+</html>

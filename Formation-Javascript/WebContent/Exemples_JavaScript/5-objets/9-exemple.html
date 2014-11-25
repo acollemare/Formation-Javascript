@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>5-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="8-heritage-constructeur.html"> 8 Héritage constructeur</a> 
+        <a href="9-exemple.html"> 9 Heritage exemple </a> 
+        <a href="../6-objets_globaux/1-objets-globaux.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Heritage exemple:   </h4><br />
+    <p>Constructeur<br />
+    </p>
+    <pre>
+
+</pre>
+<script type="text/javascript">
+//<![CDATA[
+// declare la fonction "Person"
+var Person = function() {
+this.canTalk = true;
+this.greet = function(){
+if (this.canTalk) { console.log("Hi, I'm " + this.name); }
+ } ;
+} ;
+// declare la fonction "Employee"
+var Employee = function(name, title){
+this.name = name;
+this.title = title;
+this.greet = function(){
+if (this.canTalk) { console.log("Hi, I'm, " +
+this.name + ", the "+ this.title); }
+  } ;
+} ;
+// ajoute le nom a Person
+Employee.prototype = new Person();
+var Customer = function(name){
+this.name = name;
+}
+//Utilise la fonction person avec une nouvelle variable pour canTalk
+Customer.prototype = new Person();
+var Mime = function(name) {
+this.name = name;
+this.canTalk = false;
+} ;
+
+Mime.prototype = new Person();
+
+var bob = new Employee('Bob', 'Builder' );
+var joe = new Customer( 'Joe') ;
+var rg = new Employee ('Red Green', 'Handyman');
+var mike  = new Customer( 'Mike');
+var mime = new Mime('Mime');
+bob.greet(); 
+joe.greet(); 
+rg. greet (); 
+mike.greet(); 
+mime.greet();
+
+// ]]>
+   </script>
+    
+</article> 
+</body>
+</html>

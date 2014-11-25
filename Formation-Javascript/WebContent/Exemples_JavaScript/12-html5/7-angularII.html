@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>12-Javascript</title>
+		<link href="style.css" rel="stylesheet" type="text/css" media="all">
+		<meta name="author" content="Stephane Brunet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script> 
+
+	</head>
+<body>
+  <header>
+    <div><h1>Javascript et HTML5</h1></div>
+    <nav>
+		<a href="5-jqueryII.html"> 5 jquery II</a>
+		<a href="6-angular.html">6 Angular</a>
+		<a href="7-angularII.html"> 7 angularII</a>
+    </nav>
+    </nav>
+  </header>
+  <article>
+   <br />
+      
+       
+    <h4>Angular :   </h4>
+    <br /> <br />
+     <section>
+	 Le concept cl&eacute; ici est $scope que vous passez &agrave; toutes vos fonctions au sein d'un controleur. <br />
+	 $scope fait r&eacute;f&eacute;rence &agrave; l'&eacute;l&eacute;ment courant (ou zone courante) dans le DOM
+	 
+			<!-- contenu -->
+	<div ng-app="myApp">
+		<div ng-controller="UserCtrl">
+			 <p class="username">Welcome, {{ user.details.username }}</p>
+			 <p class="age">age: {{ user.details.age }}</p>
+		</div>
+	</div>
+
+			</section>
+   
+
+<script src="json.js"></script>
+	</article> 
+</body>
+</html>

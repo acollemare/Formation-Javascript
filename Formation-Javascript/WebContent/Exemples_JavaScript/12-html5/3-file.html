@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>12-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript et HTML5</h1></div>
+    <nav>
+       
+        <a href="2-editable.html"> 2 editable</a>
+        <a href="3-file.html">3 fichiers</a> 
+		<a href="4-jquery.html"> 4 Jquery</a>
+		
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Upload file :   </h4>
+    <br /> <br />
+     <section>
+			<!-- contenu -->
+				<p>Choisissez un ou plusieurs fichiers</p> 
+				<p> 
+				<form>
+					<input id="files-upload" type="file" multiple> 
+				</form>
+				</p>
+				<p id="drop-area"> 
+					Glisser/d&eacute;poser les fichiers ici !
+				</p> 
+				<h3>Fichiers charg&eacute;s</h3> 
+				<ul id="file-list"> 
+					<li class="no-items">Il n'y a pas encore de fichiers sélectionnés</li> 
+				</ul> 
+			</section>
+    <br />
+<script>
+
+	 //<![CDATA[
+	 (function () {
+		var filesUpload = document.getElementById("files-upload");
+		var dropArea = document.getElementById("drop-area");
+		var fileList = document.getElementById("file-list");					
+		function traverseFiles(files) {
+			var li;
+			var file;
+			var fileInfo;
+			fileList.innerHTML = "";						
+			for (var i=0, il=files.length; i<il; i++) {
+				li = document.createElement("li");
+				file = files[i];
+				fileInfo = "<div><b>Nom :</b> " + file.name + "</div>";
+				fileInfo += "<div><b>Taille :</b> " + file.size + " bytes</div>";
+				fileInfo += "<div><b>Type :</b> " + file.type + "</div>";
+				li.innerHTML = fileInfo;
+				fileList.appendChild(li);
+				};
+			};				
+			filesUpload.onchange = function () {
+				traverseFiles(this.files);
+			};	
+			dropArea.ondragenter = function () {
+				return false;
+			};						
+			dropArea.ondragover = function () {
+				return false;
+			};						
+			dropArea.ondrop = function (evt) {
+				traverseFiles(evt.dataTransfer.files);
+				return false;
+			};					
+		})();
+		// ]]>
+	</script></article> 
+</body>
+</html>

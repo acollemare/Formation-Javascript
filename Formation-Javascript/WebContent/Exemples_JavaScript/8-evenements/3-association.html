@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+  <div><h1>Javascript</h1></div>
+  <nav>
+  <a href="2-objets.html"> 2 objets</a>
+  <a href="3-association.html"> 3 Association </a>
+  <a href="4-evenhandler.html"> 4 EvenHandler</a>
+  </nav>
+  </header>
+  <article>
+  <br />
+  <h4> Association des événements aux objets : </h4>
+  <br /> <br />
+il faut des mettre dans la balise le nom de l'evenement et de lui associé une fonction <br /><br />
+<pre>
+&lt;img src='une_image.jpg' onclick='fonction1() ; fonction2() ; fonction3()' /&gt;</pre>
+
+<img src='image.png' onclick='fonction1() ;' id="vendet" />
+<script type="text/javascript">
+//<![CDATA[
+function fonction1()
+{
+ var image;
+ image=document.getElementById('vendet');
+ if (image)
+  {
+   image.style.border='3px dashed #ccc';
+  }
+}
+
+// ]]>
+</script>
+
+
+ </article> 
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-objets-globaux.html"> 1 Objets</a>
+        <a href="2-array.html"> 2 array</a>
+        <a href="3-fill-array.html"> 3 alimenter un tableau </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Array :   </h4>
+    <p><br /> 
+    <br />
+    Ensemble ordonné d'éléments, cad de valeurs 
+    accessibles par un index.<br />
+    • Fournit des propriétés pour avoir des informations
+    sur l'état des tableaux, ex: length.<br />
+    • Fournit des méthodes pour manipuler les tableaux,<br />
+    ex: join, slice.</p><br />
+  <pre> var arr= new Array ("toto" , "tata", "titi");</pre>
+    <script type="text/javascript">
+//<![CDATA[
+
+
+// tabLeau vide 0 elements, 0 longueur
+var arr = new Array ();
+var arr = Array() ;
+var arr=[]; // array initiaLizer
+// syntaxes identiques
+// tabLeau non-vide   3 elements , Longueur 3
+var arr= new Array ("toto" , "tata", "titi");
+var arr= Array("toto", "tata", "titi");
+var arr= ["toto", "tata", "titi"];
+console.log( arr);
+/* syntaxes identiques
+ tabLeau vide1 6 ~L~mentsJ Longueur 3
+ Lorsqu'un nombre est passé en paramètre du constructeur Array() ou de La fonction, il est interprété comme arrayLength et non un élément simple
+ Le Number doit avoir une fraction égaLe 0 sinon RangeError */
+var arr = new Array (3 ) ;
+var arr = Array(3);
+var arr = [ ] ;
+arr.length = 3;
+console.log( arr);
+
+// ]]>
+</script>
+  
+</article> 
+</body>
+</html>

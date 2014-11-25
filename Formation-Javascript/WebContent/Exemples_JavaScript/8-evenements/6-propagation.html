@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+  <div><h1>Javascript</h1></div>
+  <nav>
+  <a href="5-event.html"> 5 event</a>
+  <a href="6-propagation.html"> 6 Propagation </a>
+  <a href="../9-formulaire/1-formulaire.html"> &gt; &gt;</a>
+  </nav>
+  </header>
+  <article>
+  <br />
+  <h4> Le paramètre EVENT : </h4>
+  <p><br /> 
+    <br />
+    Une fois l'objet Event créé, il se propage dans l'arbre DOM selon un flux bien précis déterminé par sa cible :
+    
+    <br /> <br />
+    - Phase de capture : l'événement se propage de la racine du document (incluse) à la cible (exclue).<br />
+    - L'événement atteint la cible.<br />
+    -  Phase de bouillonnement (bubbling) : l'événement se propage dans le sens inverse : de la cible (exclue) à la racine du document (incluse). 
+    <br />
+    le flux d'événement peut être interrompu dans le code JavaScript grâce à la méthode stopPropagation. <br />Il peut servir a traiter globalement les évenements
+    
+    <pre>
+//doSomething est un event handler
+function doSomething(e)
+{
+if (!e) var e = window.event;
+e.cancelBubble = true; // Microsoft . ..
+if (e.stopPropagation) e.stopPropagation() ; // W3C
+    
+    </pre>
+    
+<script type="text/javascript">
+//<![CDATA[
+
+// ]]>
+    </script>
+    </h4>
+  </p>
+  <p>&nbsp;</p>
+  <p>Un click sur un lien texte:</p>
+  <p><img src="propagation.jpg" width="443" height="460"></p>
+ </article> 
+</body>
+</html>

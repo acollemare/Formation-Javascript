@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Controle_liste</title>
+<script language="javascript">
+function controleliste()
+{
+if(form1.Question.selectedIndex ==0)
+alert("C'est moins");
+else if(form1.Question.selectedIndex==1)
+alert("C'est plus");
+else {
+alert("C'est la bonne vitesse");
+}
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="" action="" >
+  <p>Quelle est la vitesse maximum du TGV lors de son record le 3 avril 2007 ? </p>
+  <select name="Question" id="Question">
+    <option>630,1 Km/h</option>
+    <option>477,8 Km/h</option>
+    <option>574,8 Km/h</option>
+  </select>
+  <p>&nbsp;</p>
+  <p>
+    <input type="submit" name="contrôler" value="contrôler" 
+onClick="controleliste()" />
+  </p>
+</form>
+</body>
+</html>

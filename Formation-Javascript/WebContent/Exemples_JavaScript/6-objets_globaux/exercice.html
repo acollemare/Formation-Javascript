@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        
+        <a href="6-date.html"> 6 date </a>
+        <a href="7-math.html"> 7 Math</a>
+        <a href="8-regexp.html"> 8 RegExp</a>
+    </nav>
+  </header>
+  <article>
+    <br />
+      
+       
+    <h4>Exercice :   </h4>
+    <p><br />
+     Je voudrais créer un champ où l’utilisateur entre le montant 
+    qu’il souhaite transporter et clique sur OK et là s’affiche le montant de sa course</p>
+    <p><img src="exo.jpg" width="403" height="327">
+  <script type="text/javascript">
+//<![CDATA[
+  var course= prompt( "Le montant à transporter","");
+  var solution = 0;
+  if(course <= 2000){var solution=14;
+}else if(course <= 4000){var solution=16;	
+}else if(course <= 6000){var solution=18;
+}else if(course <= 8000){var solution=20;	
+}else if(course <= 10000){var solution=22;
+}else if(course <= 12000){var solution=24;
+}else {var solution=26 + (Math.floor((course-12000)/2000)*3);
+};
+document.write("Montant à régler " +solution+ "€");
+// ]]>
+      </script>
+    </p>
+    </p>
+</article> 
+</body>
+</html>

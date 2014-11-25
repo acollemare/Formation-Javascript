@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>7-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="1-dom.html"> 1 DOM</a>
+        <a href="2-noeuds.html"> 2 noeuds</a>
+        <a href="3-dom-html.html"> 3 DOM Html </a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Noeud :   </h4>
+    <p><br /> 
+    <br />
+    Les noeuds d'un arbre peuvent être de différent types: Document,
+DocumentFragment, Document Type, Element, Text,
+Processinglnstruction;Attribute,Comment.<br />
+• Chaque noeud peut-être observé <br />
+C'est comme ça que le navigateur réagit aux changements dans le
+DOM et met à jour l'affichage du document.<br /><br /> 
+• Chaque noeud peut être la cible d'évènements.<br />
+• les nodes étendent Event Target.         
+
+    <p>
+    <pre>  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;<br />  &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/html.html">html</a>&gt;<br />      &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/head.html">head</a>&gt;<br />      &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/title.html">title</a>&gt;DOM&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/title.html">title</a>&gt;<br />      &lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/head.html">head</a>&gt;    <br />   &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/body.html">body</a>&gt;         <br />     &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/div.html">div</a> <a target="_blank" href="http://www.w3.org/TR/html-markup/id.html">id</a>="idP1" <a target="_blank" href="http://www.w3.org/TR/html-markup/style.html">style</a>="border:1px solid #AAAAAA"&gt;      <br />       &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/h4.html">h4</a>&gt;DIV 1&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/h4.html">h4</a>&gt;      
+       bla bla bla bla bla bla bla bla bla bla bla       <br />       &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/span.html">span</a>&gt;bla bla bla bla bla bla bla&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/span.html">span</a>&gt;      <br />       bla bla bla bla bla bla bla bla bla      <br />       &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/a.html">a</a> <a target="_blank" href="http://www.w3.org/TR/html-markup/href.html">href</a>=""&gt;bla bla bla bla bla bla bla bla bla&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/a.html">a</a>&gt;      <br />     &lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/div.html">div</a>&gt;         <br />     &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/div.html">div</a> <a target="_blank" href="http://www.w3.org/TR/html-markup/id.html">id</a>="idP2"&gt;          <br />       &lt;<a target="_blank" href="http://www.w3.org/TR/html-markup/h4.html">h4</a>&gt;DIV 2&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/h4.html">h4</a>&gt;          <br />       bla bla bla bla bla bla bla bla bla      <br />     &lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/div.html">div</a>&gt;     <br />&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/body.html">body</a>&gt;     <br />&lt;/<a target="_blank" href="http://www.w3.org/TR/html-markup/html.html">html</a>&gt;  
+
+|-- HTML
+    |-- HEAD
+        |-- TITLE
+            |-- #text (0)
+    |-- BODY
+        |-- #text (1)
+        |-- DIV  id = "idP1"
+            |-- #text (2)
+            |-- H4
+                |-- #text 
+            |-- #text (3)
+            |-- SPAN
+                |-- #text
+            |-- #text  (4)
+            |-- A
+                |-- #text
+            |-- #text (5)
+        |-- #text (6)
+        |-- DIV  id = "idP2"
+            |-- #text (7)
+            |-- H4
+                |-- #text
+            |-- #text (8)
+        |-- #text (9)</pre>
+        <h4> gestion des nœuds </h4><br />
+
+createElement() 	Méthode pour créer un nouvel élément HTML dans le document (div, p, span, a, form, input, etc…).<br /><br />
+createTextNode() 	Méthode pour créer un nœud texte.<br /><br />
+appendChild() 	Pour ajouter l'élément créé dans le document. L'élément sera ajouté comme étant le dernier nœud enfant d'un élément parent.<br /><br />
+insertBefore() 	Pour ajouter l'élément créé avant un autre nœud.<br /><br />
+removeChild() 	Pour supprimer un nœud.
+    <p>        
+    <pre>
+    
+   </pre>
+</article> 
+</body>
+</html>

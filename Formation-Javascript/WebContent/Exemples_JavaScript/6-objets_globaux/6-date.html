@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="5-boolean.html"> 5 Boolean</a>
+        <a href="6-date.html"> 6 date </a>
+        <a href="7-math.html"> 7 Math</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Date :   </h4><br />
+    Permet de travailler avec les dates et les temps.<br />
+    • Fournit des méthodes pour manipuler les dates mais n'a pas de propriétés.<br />
+    • Stocke les dates comme un nombre de millisecondes depuis le january 1, 1970, 00:00:00.<br />
+    • La plage de l'objet Date va de -100,000,000 jours à 1 00,000,000 days relativement au 1 January, 1970 UTC
+    <pre>
+   // Créer une date
+var today = new Date(); // cree une date représentant La date et Le temps courants.
+var Xmas95 = new Date("December  25, 1995 13:30:00"); /* une date et un temps spécifiés . Format: "Month day, year hours :minutes: seconds." */
+var Xmas95 = new Date( 1995, 11, 25, 9, 30, 0); /*entiers: année" mois, jours, heures, minutes, secondes . Si Les heures , minutes, secondes ne sont
+pas mentionnées alors elles sont définies à 0.*/
+//ManipuLer une date
+today.getFullYear(); //retourne L'année
+today .getHours() // retourne L'heure
+today .getTime() //représentation en milLisecondes de La date
+today.setMinutes(33) //modifie Les minutes
+today.toJSON() // retour·ne La date ou format JSON
+today .toUTCString(); // retourne La date au format UTC
+today.toLocaleString("fr-FR") //retourne La date en La formatant pour une Locale donnée </pre>
+
+    <script type="text/javascript">
+//<![CDATA[
+// Créer une date
+var today = new Date(); 
+var Xmas95 = new Date("December  25, 1995 13:30:00");
+
+var Xmas95 = new Date( 1995, 11, 25, 9, 30, 0); 
+
+today.getFullYear(); 
+today .getHours() 
+today .getTime() 
+today.setMinutes(33) 
+today.toJSON() 
+today .toUTCString();
+today.toLocaleString("fr-FR") 
+console.log(today.toLocaleString("fr-FR"));
+
+// ]]>
+</script>
+ 
+
+</article> 
+</body>
+</html>

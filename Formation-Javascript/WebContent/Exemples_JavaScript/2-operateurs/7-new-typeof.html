@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>2-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="6-ternaire.html"> 6 ternaire </a>
+        <a href="7-new-typeof.html"> 7 new typeof</a>
+        <a href="8-void.html"> 8 void</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Opérateurs  :   </h4>
+    <br /> <br /><br />
+      
+    <h4>Opérateur NEW</h4>
+    L'opérateur new est indispensable pour créer des objets en javascript, <br>
+    objet prédéfini dans le navigateur ou objet défini par programmation.<br>
+<pre> 
+var dt=new Date();
+document.write("Nous sommes en " + dt.getFullYear());
+
+</pre>
+
+<script type="text/javascript">
+//<![CDATA[
+// un raccourci pour concatèner
+
+var dt=new Date();
+document.write("Nous sommes en " + dt.getFullYear());
+
+// ]]>
+</script>
+  <br /><br /><br />
+ <h4>Opérateur TYPEOF</h4>
+ Sa fonction est de <em>fournir une chaîne de caractères qui représente le type de valeur de l'opérande</em>.
+    <pre> 
+var my Fun = new Function("5 + 2");
+var shape = "round";
+var size = 1;
+var today = new Date();
+
+typeof myFun; // returns "function"
+typeof shape; // returns "string"
+typeof size; // returns "number"
+typeof today; // returns "object"
+typeof dontExist; // returns "undefined"
+
+typeof true; // returns "boolean"
+typeof null; // returns "0bject"
+typeof 62; // returns "number"
+typeof 'Hello world'; // returns "string"
+
+</pre>
+
+<script type="text/javascript">
+//<![CDATA[
+// Typeof
+var myFun = new Function("5 + 2");
+var shape = "round";
+var size = 1;
+var today = new Date();
+
+console.log(typeof myFun);
+console.log(typeof shape); 
+console.log(typeof size); 
+console.log(typeof today); 
+console.log(typeof dontExist); 
+console.log(typeof true); 
+console.log(typeof null); 
+console.log(typeof 62); 
+console.log(typeof 'hello word,'); 
+
+// ]]>
+</script> 
+</article> 
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Controle_bouton_radio</title>
+<script language="javascript">
+function controleboutonradio()
+{
+if(form1.connaitre_Javascript[0].checked) {
+alert("C'est très bien");
+}
+if (form1.connaitre_Javascript[1].checked) {
+alert("Vous pouvez encore progresser");
+}
+if (form1.connaitre_Javascript[2].checked) {
+alert("Nous n'en sommes qu'au début");
+}
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="" action="" >
+  <p>&nbsp;  </p>
+  <table width="617" border="0">
+    <tr>
+      <td width="326">Connaissez-vous bien le Javascript ? </td>
+      <td width="281"><p>
+        <label>
+          <input type="radio" name="connaitre_Javascript" value="Oui">
+          Oui</label>
+        <br>
+        <label>
+          <input type="radio" name="connaitre_Javascript" value="Un peu">
+          Un peu</label>
+        <br>
+        <label>
+          <input type="radio" name="connaitre_Javascript" value="Pas du tout">
+          Pas du tout</label>
+      </p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>
+    <input type="submit" name="Submit" value="Envoyer" onClick="controleboutonradio()" />
+  </p>
+</form>
+</body>
+</html>

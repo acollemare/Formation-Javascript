@@ -1,0 +1,219 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Formulaire de Reservation</title>
+</style>
+<script language="JavaScript">
+function control()
+{
+nom_minuscule=Formulaire_reservation.Nom.value;
+nom_majuscule=nom_minuscule.toUpperCase();
+Formulaire_reservation.Nom.value=nom_majuscule;
+test_mail=Formulaire_reservation.email.value;
+resultat = test_mail.search('@');
+if (resultat<0) {
+alert("e-mail non valide");
+}
+var article1 = document.Formulaire_reservation.Designation_P1.value;
+var article2 = document.Formulaire_reservation.Designation_P2.value;
+switch (article1)
+{
+case "Jupe":
+document.Formulaire_reservation.Prix_unitaire_P1.value=35;
+break;
+case "Pantalon":
+document.Formulaire_reservation.Prix_unitaire_P1.value=50;
+break;
+case "Short":
+document.Formulaire_reservation.Prix_unitaire_P1.value=25;
+break;
+case "Tee-shirt":
+document.Formulaire_reservation.Prix_unitaire_P1.value=15;
+}
+switch (article2)
+{
+case "Jupe":
+document.Formulaire_reservation.Prix_unitaire_P2.value=35;
+break;
+case "Pantalon":
+document.Formulaire_reservation.Prix_unitaire_P2.value=50;
+break;
+case "Short":
+document.Formulaire_reservation.Prix_unitaire_P2.value=25;
+break;
+case "Tee-shirt":
+document.Formulaire_reservation.Prix_unitaire_P2.value=15;
+}
+document.Formulaire_reservation.Sous_total_P1.value=document.Formulaire_reservation.Quantite_P1.value*document.Formulaire_reservation.Prix_unitaire_P1.value;
+document.Formulaire_reservation.Sous_total_P2.value=document.Formulaire_reservation.Quantite_P2.value*document.Formulaire_reservation.Prix_unitaire_P2.value;
+document.Formulaire_reservation.Total_HT.value=document.Formulaire_reservation.Sous_total_P1.value+document.Formulaire_reservation.Sous_total_P2.value;
+document.Formulaire_reservation.Total_TTC.value=document.Formulaire_reservation.Total_HT.value*2.00;
+code=document.Formulaire_reservation.CP.value;
+if(!isNaN(code))
+;
+else
+alert("Veuillez entrer un Code Postal valide");
+if (document.Formulaire_reservation.Reservation.checked==false)
+alert("Veuillez valider les conditions générale de réservation");
+}
+</script>
+
+</head>
+
+<body>
+<div align="center">
+  <p><strong>FORMULAIRE DE RESERVATION</strong></p>
+  <form action="" method="post" name="Formulaire_reservation" id="Formulaire_reservation">
+    <table width="914" border="0">
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Nom</span> <span class="Style2">* </span></div></td>
+        <td width="253"><div align="left">
+          <input name="Nom" type="text" id="Nom" size="25" maxlength="25" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Pr&eacute;nom</span></div></td>
+        <td><div align="left">
+          <input name="Prenom" type="text" id="Prenom" size="25" maxlength="25" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Adresse</span></div></td>
+        <td><div align="left">
+          <input name="Adresse" type="text" id="Adresse" size="40" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">CP</span> * </div></td>
+        <td><div align="left">
+          <input name="CP" type="text" id="CP" size="8" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Ville</span> <span class="Style2">* </span></div></td>
+        <td><div align="left">
+          <input name="Ville" type="text" id="Ville" size="25" maxlength="25" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">T&eacute;l&eacute;phone</span></div></td>
+        <td><div align="left">
+          <input name="Telephone" type="text" id="Telephone" size="10" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">e-mail</span></div></td>
+        <td><div align="left">
+          <input name="email" type="text" id="email" size="30" />
+        </div></td>
+      </tr>
+      <tr>
+        <td width="277"><div align="left"><span class="Style1">D&eacute;signation du Produit </span></div></td>
+        <td width="113"><div align="center" class="Style1">
+          <div align="left">Quantit&eacute;</div>
+        </div></td>
+        <td width="253"><div align="center" class="Style1">
+          <div align="left">Prix unitaire </div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">Sous-total</div>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div align="left"><span class="Style1">
+          <select name="Designation_P1" id="Designation_P1">
+            <option value="Jupe">Jupe</option>
+            <option value="Pantalon">Pantalon</option>
+            <option value="Short">Short</option>
+            <option value="Tee-shirt">Tee-shirt</option>
+          </select>
+        </span></div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Quantite_P1" type="text" id="Quantite_P1" size="3" />
+            </div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Prix_unitaire_P1" type="text" id="Prix_unitaire_P1" size="10" />
+            </div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Sous_total_P1" type="text" id="Sous_total_P1" size="10" />
+            </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div align="left"><span class="Style1">
+          <select name="Designation_P2" id="Designation_P2">
+            <option value="Jupe">Jupe</option>
+            <option value="Pantalon">Pantalon</option>
+            <option value="Short">Short</option>
+            <option value="Tee-shirt">Tee-shirt</option>
+            <option value="Veste">Veste</option>
+          </select>
+        </span></div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Quantite_P2" type="text" id="Quantite_P2" size="3" />
+            </div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Prix_unitaire_P2" type="text" id="Prix_unitaire_P2" size="10" />
+            </div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Sous_total_P2" type="text" id="Sous_total_P2" size="10" />
+            </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td><div align="left"></div></td>
+        <td><div align="center" class="Style1">
+          <div align="left"></div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left"></div>
+        </div></td>
+        <td><div align="center" class="Style1">
+          <div align="left"></div>
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Total HT</span></div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Total_HT" type="text" id="Total_HT" size="10" />
+            </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Total TTC </span></div></td>
+        <td><div align="center" class="Style1">
+          <div align="left">
+            <input name="Total_TTC" type="text" id="Total_TTC" size="10" />
+            </div>
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="3"><div align="left"><span class="Style1">Je d&eacute;clare avoir pris connaissance des conditions g&eacute;n&eacute;rales de r&eacute;servation </span></div></td>
+        <td><div align="left">
+          <input name="Reservation" type="checkbox" id="Reservation" value="checkbox" />
+        </div></td>
+      </tr>
+      <tr>
+        <td colspan="4"><div align="center" class="Style1">
+          <input type="button" name="Submit" value="Valider" onClick="control()">
+          <input type="reset" name="Submit2" value="R&eacute;initialiser">
+        </div></td>
+      </tr>
+    </table>
+  </form>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

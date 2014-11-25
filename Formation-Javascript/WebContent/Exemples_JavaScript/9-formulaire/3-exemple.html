@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>9-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-valeurs.html"> 2 Valeurs</a>
+        <a href="3-exemple.html"> 3 exemple </a>
+        <a href="../10-CSS/1-css.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Validation du formulaire :   </h4>
+    <br /> <br />
+   
+   <form name="person" method="post" action="">
+   <label for="firstname">Pr&eacute;nom </label>
+   <input type="text" name="firstname">
+   <br />
+   <label for="pass">pwd </label>
+   <input type="password" name="pass">
+   <br />
+   <input type="submit">
+   </form>
+   <script type="text/javascript">
+//<![CDATA[
+document.forms["person"].elements["firstname"].addEventListener("input",function(e) {
+	e.target.className = isAlpha(e.target.value) ? "valid":"invalid";
+});
+
+document.forms["person"].addEventListener("submit", function(e) {
+	if( isEmpty(document.forms["person"].elements["firstname"].value) ||
+	isEmpty(document.forms["person"].elements["pass"].value) ||
+	!isAlpha(document.forms["person"].elements["firstname"].value)||
+	!isAlpha(document.forms["person"].elements["pass"].value)) {
+		e.preventDefault();
+		e.stopPropagation();
+		  alert("prénom  ou mot de passe invalide");
+	}
+});
+function isEmpty(s) {
+	return s.length===0;
+}
+function isAlpha(s) {
+	var pattern= /^[a-z0-9]*$/i;
+	return pattern.test(s);
+}
+// ]]>
+    </script>
+<a href="exercice.html">Exercice</a></article> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<title>12-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script> 
+
+</head>
+<body ng-app ng-init="users = [{name:'Luke Skywalker'}, {name:'Yoda tout court'}]">
+  <header>
+    <div><h1>Javascript et HTML5</h1></div>
+    <nav>
+		<a href="5-jqueryII.html"> 5 jquery II</a>
+		<a href="6-angular.html">6 Angular</a>
+		<a href="7-angularII.html"> 7 angularII</a>
+    </nav>
+    </nav>
+  </header>
+  <article>
+   <br />
+      
+       
+    <h4>Angular :   </h4>
+    <br /> <br />
+     <section>
+	 Angular est un framework MVC/MVVM cot&eacute; client, <br />
+	 d&eacute;velopp&eacute; en JavaScript, ce qui est obligatoire pour cr&eacute;er une application moderne <br />
+	 &agrave; page unique (ou meme un site internet). <br />
+	 C'est un grand bond vers le futur de HTML et vers ce que HTML5 apporte<br />
+	 Une d&eacute;claration "ng-app", &eacute;crire un controleur pour parler à la vue <br />
+	 puis l'inclusion d'Angular et un attachement au DOM<br /><br />
+			<!-- contenu -->
+	<button type="button" ng-click="users.push({name:'Obi-Wan Kenobi'});">
+    Add user
+  </button>
+  <ul>
+    <li ng-repeat="user in users track by $index">
+       {{$index}} - {{user.name}}
+    </li>
+  </ul>		
+			</section>
+   
+
+<script type="text/javascript">
+	 //<![CDATA[
+	
+		
+		// ]]>
+	</script></article> 
+</body>
+</html>

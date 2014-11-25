@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>6-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="7-math.html"> 7 Math</a>
+        <a href="8-regexp.html"> 8 RegExp</a>
+         <a href="../7-DOM/1-dom.html"> &gt; &gt; </a>
+    </nav>
+  </header>
+  <article>
+    <br />
+      
+       
+    <h4>RegExp :   </h4><br /><br />
+      <h4>- ABS()   </h4><br />
+      L'objet <em>RegExp</em> est un objet permettant de manipuler des expressions régulières, c'est-à-dire des modèles créés à l'aide de caractères ASCII permettant de manipuler des chaînes de caractères, afin de trouver des portions de la chaîne correspondant au modèle.<br />
+Il est également possible de créer un tel objet de manière plus classique à l'aide <br />
+de son constructeur :Expression = new RegExp("motif","drapeau")
+      <pre>
+"^debut": chaîne qui commence par "debut"
+"fin$": chaîne qui se termine par "fin"
+"^chaîne$": chaîne qui commence et se termine par "chaîne"
+"abc": chaîne contenant la chaîne "abc"
+
+^JavaScript // ^ represente le début de chaine. Matche "JavaScript  c'est très bien", mais pas "J'aime JavaScript "
+JavaScript$ //$represente La fin de chaine. Match "J'aime JavaScript" mais pas "JavaScript c'est très bien!",
+^JavaScript$ // Match "JavaScript ", et rien d'outre
+[12345] // [] Liste un caractères dans un ensemble. Matche "1" et "3", mais pas "a " ni "12"
+[1-5] // Les caractères de 1 à 5
+[a-z] // Les caractères de a à z
+[0-9a-zA-Z] // Les caractères alphanumériques
+[^a-zA-Z] // tout sauf des lettres
+bana?na // ? represente 0 ou 1 caractère. Matche "banana" et "banna" mais pas "banaana"
+bana+na // + represente 1 caratère. Matche "banana" and "banaana" mais pas "banna".
+bana*na // represente 0 ou plusieurs caractère. Matche "banna", "banana", et "banaaana".
+^[a-zA-Z]+$ // toutes les chaines d'un ou plusieurs caracteres
+</pre>
+<script type="text/javascript">
+//<![CDATA[
+
+// ]]>
+</script>
+</article> 
+</body>
+</html>

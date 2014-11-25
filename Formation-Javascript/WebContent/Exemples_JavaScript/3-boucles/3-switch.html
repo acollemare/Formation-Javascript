@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>3-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-if-else.html"> 2 If Else</a>
+        <a href="3-switch.html"> 3 switch </a>  
+        <a href="4-while.html"> 4 while</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Condition  :   </h4>
+    <br /> <br /><br />
+      
+    <h4>SWITCH</h4>
+    <p>Cette structure remplace avantageusement une structure équivalente construite à partir de if else et if else imbriqués.<br />
+    Le mécanisme de test ne fait pas appel à une expression logique,<br /> mais à une comparaison d'une variable de type scalaire avec des valeurs du même type</p>
+    <p>La structure <strong>switch case</strong> ne pourrait pas fonctionner correctement sans <strong>break</strong>.En effet, et cela est déconcertant au début, quand une condition case est vérifiée, l'interpréteur n'effectue plus de test et exécute tout ce   qu'il trouve jusqu'à la fin en passant par dessus les <strong>case</strong> rencontrés.<br />
+    </p>
+    <pre> 
+switch(ma_var)
+{
+var egal_deux = 2
+     case 1 :
+          alert("Ma variable vaut 1");
+     break;
+     case egal_deux :
+          alert("Ma variable vaut 2");
+     break;       
+     default : alert("Ma variable vaut autre chose que 1 ou 2");
+}
+</pre>
+<script type="text/javascript">
+//<![CDATA[
+//var ma_var=8;
+
+switch(ma_var)
+{
+     case 0:
+          alert("Vraiment nulle, cette variable"); // Elle vaut zero
+          break; 
+     case 1:
+     case 3: alert("Ma variable vaut 1 ou 3");  // Et on continue
+     case 5:
+          alert("Ma variable est impaire et comprise entre 1 et 5");
+          break;
+     case 2:
+     case 4:
+     case 6:
+          alert("Ma variable est paire et comprise entre 2 et 6");
+          break;
+     case 7:
+          alert("Ma variable est égale à 7");
+          break;          
+     default: alert("Ma variable est négative ou supérieure à 7")
+}
+// ]]>
+</script>
+  
+</article> 
+</body>
+</html>

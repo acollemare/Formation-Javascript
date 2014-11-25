@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>9-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+<script src="datepicker/jquery-132min.js" type="text/javascript"></script>
+<script src="datepicker/ui.datepicker.js" type="text/javascript"></script>
+<script src="datepicker/ui.datepicker-fr.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="datepicker/ui.datepicker.css" />
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+        <a href="2-valeurs.html"> 2 Valeurs</a>
+        <a href="3-exemple.html"> 3 exemple </a>
+        <a href="../10-CSS/1-css.html"> &gt; &gt;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Date  formulaire :   </h4>
+    <br /> <br />
+   
+   <form name="person" method="post" action="">
+   <label for="firstname">Pr&eacute;nom </label>
+   <input type="text" name="firstname">
+   <br />
+   <label for="date">Date </label>
+   <input type="text" name="date" id="maDateTest">
+   <br />
+   <input type="submit">
+   </form>
+   <script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+    jQuery.datepicker.setDefaults($.datepicker.regional['fr']);
+    jQuery('#maDateTest').mousedown(function(){
+        jQuery("#maDateTest").datepicker({minDate:'-36500', maxDate:'+36500', dateFormat: 'dd-mm-yy', firstDay:1, cgangeFirstDay : false }).attr("readonly","readonly");
+    });
+});
+
+
+// ]]>
+   </script><a href="testChamps/">travail sur les elements formulaires</a></article> 
+</body>
+</html>

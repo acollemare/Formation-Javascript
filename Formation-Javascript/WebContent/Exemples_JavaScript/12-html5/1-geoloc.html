@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>12-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript et HTML</h1></div>
+    <nav>
+        <a href="1-Geoloc.html"> 1 Geo</a>
+        <a href="2-editable.html"> 2 editable</a>
+        <a href="3-file.html"> 3 fichier</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Geolocalisation :   </h4>
+    <br /> <br />
+     <section>
+				<form>
+					<div >Latitude : <span id="latitude" class="result">En attente...</div>
+					<div >Longitude : <span id="longitude" class="result">En attente...</span></div>
+					<input type="button" id="bouton" onclick="getLocalisation();" value="G&eacute;olocaliser">
+				</form>
+			</section>
+    <br />
+    
+ 
+    
+<script>
+
+	 //<![CDATA[
+		function localiser(position) {
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			document.getElementById("latitude").innerHTML = latitude;
+			document.getElementById("longitude").innerHTML = longitude;
+			}
+		// une fonction qui appelle une fonction
+		function getLocalisation(){
+			if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(localiser);
+			}
+			else {
+			alert("Désolé, votre navigateur ne supporte pas la géolocalisation");
+			}
+		}
+		// ]]>
+	</script></article> 
+</body>
+</html>
+

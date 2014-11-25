@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>10-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+  <header>
+    <div><h1>Javascript</h1></div>
+    <nav>
+       <a href="3-position.html"> 3 Position </a>
+       <a href="4-drag.html"> 4 Drag & Drop</a>
+       <a href="5-modernizr.html"> 5 modernizr;</a>
+    </nav>
+  </header>
+  <article>
+    <p>&nbsp;</p><br />
+      
+       
+    <h4>Feuille de Style en Cascade :   </h4>
+    <br /> <br />
+Pour modifier les styles CSS d'un élément, il suffit d'utiliser la propriété style. 
+Il ne reste plus qu'à accéder à la bonne propriété CSS,<br /> par exemple : element.style.height = '300px'.
+
+Le nom des propriétés composées doit s'écrire sans tiret et avec une majuscule pour débuter chaque mot, à l'exception du premier. Ainsi, border-radius devient borderRadius.<br /><br />
+
+La fonction getComputedStyle() récupère la valeur de n'importe quelle propriété CSS.<br /> C'est utile, car la propriété style n'accède pas aux propriétés définies dans la feuille de style.<br />
+
+Les propriétés de type offset, au nombre de cinq, permettent de récupérer <br />des valeurs liées à la taille et au positionnement.<br />
+
+
+<div class="draggableBox">1</div>
+<div class="draggableBox">2</div>
+<div class="draggableBox">3</div>
+ 
+
+    <script type="text/javascript">
+//<![CDATA[
+   var storage = {}; // Contient l'objet de la div en cours de déplacement
+        
+        
+        function addEvent(element, event, func) { // Une fonction pour gérer les événements sous tous les navigateurs.
+            if (element.attachEvent) {
+                element.attachEvent('on' + event, func);
+            } else {
+                element.addEventListener(event, func, true);
+            }
+        }
+        
+        
+        function init() { // La fonction d'initialisation
+            var elements = document.getElementsByTagName('div'),
+                elementsLength = elements.length;
+            
+            for (var i = 0 ; i < elementsLength ; i++) {
+                if (elements[i].className === 'draggableBox') {
+            
+                    addEvent(elements[i], 'mousedown', function(e) { // Initialise le drag & drop
+                        var s = storage;
+                        s.target = e.target || event.srcElement;
+                        s.offsetX = e.clientX - s.target.offsetLeft;
+                        s.offsetY = e.clientY - s.target.offsetTop;
+                    });
+            
+                    addEvent(elements[i], 'mouseup', function() { // Termine le drag & drop
+                        storage = {};
+                    });
+                }
+            }
+            
+            addEvent(document, 'mousemove', function(e) { // Permet le suivi du drag & drop
+                var target = storage.target;
+                
+                if (target) {
+                    target.style.top = e.clientY - storage.offsetY + 'px';
+                    target.style.left = e.clientX - storage.offsetX + 'px';
+                }
+            });
+        }
+        
+        init(); // On initialise le code avec notre fonction toute prête.
+// ]]>
+    </script></article> 
+</body>
+</html>

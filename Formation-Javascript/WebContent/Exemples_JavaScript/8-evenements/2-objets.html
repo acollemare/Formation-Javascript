@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>8-Javascript</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+<meta name="author" content="Stephane Brunet" />  
+
+
+</head>
+<body>
+  <header>
+  <div><h1>Javascript</h1></div>
+  <nav>
+  <a href="1-evenement.html"> 1 Evénements</a>
+  <a href="2-objets.html"> 2 objets</a>
+  <a href="3-association.html"> 3 Association </a>
+  </nav>
+  </header>
+  <article>
+  <br />
+  <h4>  Objet history : </h4>
+  <br /> <br />
+Cet objet permet de gérer l' historique de la navigation.
+  <br />
+  <pre>
+ window.history.go(-1);
+ window.history(0);// pour recharger la page
+  </pre>
+  
+  <h4> L'objet navigator : </h4>
+  <br /> <br />
+Il permet de connaître un certain nombre de choses sur le navigateur du client.
+  <br />
+  <pre>var chaine= &quot;&lt;OL&gt;&quot;<br>+&quot;&lt;LI&gt;Code: &quot;+navigator.appCodeName+&quot;&lt;/LI&gt;&quot;<br>+&quot;&lt;LI&gt;Nom: &quot;+navigator.appName+&quot;&lt;/LI&gt;&quot;<br>+&quot;&lt;LI&gt;Version: &quot;+navigator.appVersion+&quot;&lt;/LI&gt;&quot;<br>+&quot;&lt;LI&gt;Client: &quot;+navigator.userAgent+&quot;&lt;/LI&gt;&quot;<br>+&quot;&lt;/OL&gt;&quot;;<br>document.write( chaine);</pre>
+  
+<script type="text/javascript">
+//<![CDATA[
+var chaine= "<OL>"
++"<LI>Code: "+navigator.appCodeName+"</LI>"
++"<LI>Nom: "+navigator.appName+"</LI>"
++"<LI>Version: "+navigator.appVersion+"</LI>"
++"<LI>Client: "+navigator.userAgent+"</LI>"
++"</OL>";
+document.write( chaine);
+// ]]>
+   </script>  
+  <h4> Association des événements aux objets : </h4>
+  <br /> <br />
+Chaque événement ne peut pas être associé à n'importe quel objet. <br />
+Il est évident par exemple qu'un événement OnChange ne pourra pas s'appliquer
+à un lien hypertexte. <br />
+Voici un tableau récapitulant les objets auxquels peuvent être associés chaque événement : 
+<br /><br /><table  width="80%"><tr><th>Ev&eacute;nements</th><th>Objets concern&eacute;s</th></tr>
+<tr><td align="center">   abort</td><td align="center">Image</td></tr>
+<tr><td align="center">   blur</td><td align="center"> Button, Checkbox, FileUpload, Layer, Password, Radio, Reset, Select, Submit, Text, TextArea, window</td></tr>
+<tr><td align="center">  change</td><td align="center"> FileUpload, Select, Submit, Text, TextArea</td></tr>
+<tr><td align="center">   click</td><td align="center"> Button, document, Checkbox, Link, Radio, Reset, Select, Submit</td></tr>
+<tr><td align="center"> dblclick</td><td align="center"> document, Link</td></tr>
+<tr><td align="center"> dragdrop</td><td align="center"> window</td></tr>
+<tr><td align="center"> error</td><td align="center"> Image, window</td></tr>
+<tr><td align="center"> focus</td><td align="center"> Button, Checkbox, FileUpload, Layer, Password, Radio, Reset, Select, Submit, Text, TextArea, window</td></tr>
+<tr><td align="center">   keydown</td><td align="center">   document, Image, Link, TextArea</td></tr>
+<tr><td align="center">   keypress</td><td align="center">   document, Image, Link, TextArea</td></tr>
+<tr><td align="center">   keyup</td><td align="center">   document, Image, Link, TextArea</td></tr>
+<tr><td align="center">   load</td><td align="center">   Image, Layer, window</td></tr>
+<tr><td align="center">   mousedown</td><td align="center">   Button, document, Link</td></tr>
+<tr><td align="center">   mousemove</td><td align="center">   Aucun sp&eacute;cifiquement</td></tr>
+<tr><td align="center">   mouseout</td><td align="center">   Layer, Link</td></tr>
+<tr><td align="center">   mouseover</td><td align="center">   Area, Layer, Link</td></tr>
+<tr><td align="center">   mouseup</td><td align="center">   Button, document, Link</td></tr>
+<tr><td align="center"> move</td><td align="center"> window</td></tr>
+<tr><td align="center">reset</td><td align="center">form</td></tr>
+<tr><td align="center">resize</td><td align="center">window</td></tr>
+<tr><td align="center">select</td><td align="center">text, Textarea</td></tr>
+<tr><td align="center">submit</td><td align="center">Form</td></tr>
+<tr><td align="center"> unload</td><td align="center">   window</td></tr>
+</table>
+ </article> 
+</body>
+</html>
