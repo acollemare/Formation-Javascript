@@ -1,0 +1,68 @@
+<!-- Exemple de parcours du DOM (les noeuds) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercice 5</title>
+
+</head>
+<body>
+	<!--  nodeValue et data pour récupérer le contenu des noeuds -->
+    <div>
+      <p id="myP1">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+    </div>
+    
+    <script>
+      var paragraph = document.getElementById('myP1');
+      var first = paragraph.firstChild;
+      var last  = paragraph.lastChild;
+
+      alert("Premier noeud: " + first.nodeValue + "\n" + "Dernier noeud: " + last.firstChild.data);
+    </script>
+    
+    <!-- childNodes retourne un tableau contenant la liste des enfants d'un élément -->
+    <div>
+    	<p id="myP2">Un peu de texte <a>et un lien</a></p>
+  	</div>
+
+  	<script>
+    	var paragraph = document.getElementById('myP2');
+    	var children  = paragraph.childNodes;
+
+    	for (var i = 0, c = children.length; i < c; i++) {
+		  
+      		if (children[i].nodeType === 1) { // C'est un élément HTML
+        		alert("noeud " + i + ": " + children[i].firstChild.data);
+      		} else { // C'est certainement un noeud textuel
+	        	alert("noeud " + i + ": " + children[i].data);
+    		}
+		
+    	}
+  	</script>
+  	
+  	<!--  nextSibling et previousSibling sont deux propriétés qui permettent 
+  		  d'accéder respectivement au noeud suivant et au noeud précédent -->
+  	<div>
+    	<p id="myP3">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+	</div>
+
+  	<script>
+    	var paragraph = document.getElementById('myP3');
+    	var child = paragraph.lastChild; // On prend le dernier enfant
+
+        while (child) {
+    		
+          if (child.nodeType === 1) {
+        	// C'est un élément HTML
+            alert(child.firstChild.data);
+          } else { 
+        	// C'est certainement un noeud textuel
+            alert(child.data);
+          }
+    		
+          child = child.previousSibling; // À chaque tour de boucle, on prend l'enfant précédent
+        }
+  	</script>  	
+</body>
+</html>

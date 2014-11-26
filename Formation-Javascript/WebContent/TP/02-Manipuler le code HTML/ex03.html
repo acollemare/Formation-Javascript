@@ -1,0 +1,37 @@
+<!-- Exemple de modification d'attribut HTML -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercice 3</title>
+
+</head>
+<body>
+  <a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
+
+  <script>
+    var link = document.getElementById('myLink');
+    
+ 	// On récupère l'attribut « href » (et on l'affiche)
+    var href1 = link.getAttribute('href');
+    alert(href1);
+
+ 	// On modifie l'attribut « href »  (méthode 1)
+    link.setAttribute('href', 'http://www.siteduzero.com'); 
+
+ 	// On récupère l'attribut « href » (et on l'affiche)
+    var href2 = link.getAttribute('href');
+    alert(href2);
+
+ 	// On modifie l'attribut « href » (méthode 2)
+    link.href = 'http://www.google.fr/'; 
+
+ 	// On récupère l'attribut « href » (et on l'affiche)
+    var href3 = link.getAttribute('href');
+    alert(href3);
+    
+  </script>
+
+</body>
+</html>

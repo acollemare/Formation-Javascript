@@ -1,0 +1,22 @@
+<!-- Exemple de récupération d'éléments dans le DOM -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exemple 01</title>
+  </head>
+  
+  <body>
+    <div>Un premier DIV</div>
+    <div>Un deuxieme DIV</div>
+
+    <script>
+      var divs = document.getElementsByTagName('div');
+
+      for (var i = 0, c = divs.length; i < c; i++) {
+          alert('Element n° ' + (i + 1) + ' : ' + divs[i]);
+      }
+    </script>
+  </body>
+</html>

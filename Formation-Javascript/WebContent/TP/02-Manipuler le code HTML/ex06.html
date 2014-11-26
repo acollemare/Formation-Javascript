@@ -1,0 +1,34 @@
+<!-- Exemple d'ajout d'élément dans le DOM -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercice 6</title>
+
+</head>
+<body>
+  	<div>
+      <p id="myP">Un peu de texte et un lien:</p>
+    </div>
+
+    <script>
+    	// Création d'un objet HTML <a>
+		var newLink = document.createElement('a');
+
+		// Ajout du contenu textuel (type #text) ajouté à l'objet précédemment créé
+	    var newLinkText = document.createTextNode("Mon lien");
+
+		// Positionnement des attributs de l'objet précédemment créé
+		newLink.id    = 'monLink';
+		newLink.href  = prompt("Quel lien voulez-vous ajouter ?");
+		newLink.title = 'Découvrez le lien que vous avez mis !';
+		newLink.setAttribute('tabindex', '10');
+
+	    newLink.appendChild(newLinkText);
+
+		// Ajout de l'objet à la fin de l'élément HTML dont l'id est 'myP'
+		document.getElementById('myP').appendChild(newLink);
+    </script>
+</body>
+</html>

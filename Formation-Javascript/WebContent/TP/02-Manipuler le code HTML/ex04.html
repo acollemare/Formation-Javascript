@@ -1,0 +1,46 @@
+<!-- Exemple d'utilisation des attributs innerHTML, innerText et textContent -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercice 4</title>
+
+</head>
+<body>
+  <div id="myDiv">
+    <p>Un peu de texte <a>et un lien</a></p>
+  </div>
+
+  <script>
+  	// On récupère l'élément dont l'id est 'myDiv' dans la page html et on l'affiche
+    var div1 = document.getElementById('myDiv');
+    alert(div1.innerHTML);
+
+    // On modifie le contenu de l'élément 'myDiv'
+    document.getElementById('myDiv').innerHTML = '<blockquote>Je mets une citation à la place du paragraphe</blockquote>';
+    
+    // On affiche le contenu de l'élément 'myDiv' au format texte (sans les balises HTML)
+    var div2 = document.getElementById('myDiv');
+    var txt = '';
+
+    if (div2.textContent) {
+    	// Si « textContent » existe ? Alors on s'en sert !
+        txt = div2.textContent;
+    } else if(div2.innerText) {
+    	// Si « innerText » existe ? Alors on doit être sous IE.
+        txt = div2.innerText + ' [via Internet Explorer]';
+    } else {
+    	// Si aucun des deux n'existe, cela est sûrement dû au fait qu'il n'y a pas de texte
+        txt = ''; // On met une chaîne de caractères vide
+    }
+
+    alert("1ier méthode: " + txt);
+    
+    // Autre façon d'écrire ce code:
+    txt = div2.textContent || div2.innerText || '';
+    alert("2ième méthode: " + txt);
+    
+  </script>
+</body>
+</html>

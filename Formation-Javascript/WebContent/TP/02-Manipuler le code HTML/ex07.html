@@ -1,0 +1,40 @@
+<!-- Exemple de copie (clone), de modification et de suppression d'élément dans le DOM -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercice 7</title>
+
+</head>
+<body>
+    <p id="myP">Un peu de texte <a>et un lien</a></p>
+    
+    <script>
+      // On va cloner un élément créé :
+      var hr1 = document.createElement('hr');
+      var hr2 = hr1.cloneNode(false); // Il n'a pas d'enfants...
+
+      // Ici, on clone un élément existant :
+      var paragraph1 = document.getElementById('myP');
+      var paragraph2 = paragraph1.cloneNode(true);
+
+      // Et attention, l'élément est cloné, mais pas "inséré" tant que l'on n'a pas appelé appendChild() :
+      alert ("Le paragraphe sera cloné !");
+      paragraph1.parentNode.appendChild(paragraph2);
+      
+      // On va modifié un élément
+      var link1 = document.getElementsByTagName('a')[0];
+      var newLabel= document.createTextNode('et un hyperlien');
+
+      alert ("Le 1ier lien va être modifié !");
+      link1.replaceChild(newLabel, link1.firstChild);
+      
+      // On va supprimer un élément
+      var link2 = document.getElementsByTagName('a')[1];
+
+      alert ("Le 2ième lien va être supprimé !");
+	  link2.parentNode.removeChild(link2);
+    </script>
+</body>
+</html>
