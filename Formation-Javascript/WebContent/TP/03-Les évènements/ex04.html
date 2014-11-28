@@ -1,0 +1,88 @@
+<!-- Exemple d'évènements sur le CSS -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemple 04</title>
+</head>
+<body>
+	<h2>Exemple de récupération de couleur</h2>
+	<style>
+	  #text1 {
+	    color: red;
+	  }
+	</style>
+	
+	<span id="text1">Mon texte</span><br /><br />
+	<input type="button" value="Afficher la couleur du texte" onclick="check1();" />
+	
+	<script>
+		function check1() {
+	  		var text = document.getElementById('text1'),
+	      		color = getComputedStyle(text, null).color;
+	  
+	  		alert("La couleur du texte est: " + color);
+	  	}
+	</script>
+	<hr />
+	
+	<h2>Exemple de calcul de positionnement de la fenêtre rouge</h2>
+	<style type="text/css">
+	  #parent, #child {
+	    position: absolute;
+	    top: 90px; left: 200px;
+	  }
+	  
+	  #parent {
+	    width: 200px; height: 80px;
+	    background-color: blue;
+	  }
+	  
+	  #child {
+	    width: 60px; height: 20px;
+	    background-color: red;
+	  }
+	</style>
+	
+	<div id="parent">
+	  <div id="child"></div>
+	</div>
+	<input type="button" value="Afficher la position de la fenêtre rouge" onclick="check2();" />
+	
+	<script>
+  
+	  // Notre fonction qui calcule le positionnement complet
+	  function getOffset(element) { 
+	      var top = 0, left = 0;
+	    
+	      do {
+	      	  // Tant que « element » reçoit un « offsetParent » 
+	      	  // valide alors on additionne les valeurs des offsets
+	          top += element.offsetTop;
+	          left += element.offsetLeft;
+	      } while (element = element.offsetParent); 
+	    
+	      return {
+	          // On retourne un objet, cela nous permet de retourner 
+	          // les deux valeurs calculées
+	          top: top,
+	          left: left
+	      };
+	  }
+	  
+	  function check2() {
+		  var parent = document.getElementById('parent');
+		  var child = document.getElementById('child');
+		  
+		  alert("Sans la fonction de calcul, la position de l'élément enfant est : \n\n" +
+		        'offsetTop : ' + child.offsetTop + 'px\n' +
+		        'offsetLeft : ' + child.offsetLeft + 'px');
+	
+		  alert("Avec la fonction de calcul, la position de l'élément enfant est : \n\n" +
+		        'offsetTop : ' + getOffset(child).top + 'px\n' +
+		        'offsetLeft : ' + getOffset(child).left + 'px');
+	  }
+	</script>
+</body>
+</html>

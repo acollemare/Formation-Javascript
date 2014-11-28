@@ -1,0 +1,133 @@
+<!-- Exemple d'évènements sur les formulaires -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemple 03</title>
+</head>
+<body>
+	<h2>Exemple d'évènements sur la propriété "value"</h2>
+	<input id="text1" type="text" size="60" value="Vous n'avez pas le focus !" />
+
+	<script>
+	  var text = document.getElementById('text1');
+	  
+	  text.addEventListener(
+	  	'focus', 
+	  	function(e) {
+	      e.target.value = "Vous avez le focus !";
+	  	}, 
+	  	true);
+	
+	  text.addEventListener(
+	  	'blur', 
+	  	function(e) {
+	      e.target.value = "Vous n'avez pas le focus !";
+	  	}, 
+	  	true);
+	</script>
+	<hr />
+	
+	<h2>Exemple d'évènements sur un champs de type radio</h2>
+	<label><input type="radio" name="check" value="1" /> Case n°1</label><br />
+	<label><input type="radio" name="check" value="2" /> Case n°2</label><br />
+	<label><input type="radio" name="check" value="3" /> Case n°3</label><br />
+	<label><input type="radio" name="check" value="4" /> Case n°4</label><br /><br />
+	<input type="button" value="Afficher la case cochée" onclick="check();" />
+	
+	<script>
+	  function check() {
+	      var inputs = document.getElementsByTagName('input'),
+	          inputsLength = inputs.length;
+	    
+	      for (var i = 0 ; i < inputsLength ; i++) {
+	          if (inputs[i].type == 'radio' && inputs[i].checked) {
+	              alert('La case cochée est la n°'+ inputs[i].value);
+	          }
+	      }
+	  }
+	</script>
+	<hr />
+	
+	<h2>Exemple d'évènements sur une liste déroulante</h2>
+	<select id="list">
+	  <option>Sélectionnez votre sexe</option>
+	  <option>Homme</option>
+	  <option>Femme</option>
+	</select>
+	
+	<script>
+	  var list = document.getElementById('list');
+	  
+	  list.addEventListener(
+	  	'change', 
+	  	function() {
+	   		// On affiche le contenu de l'élément <option> ciblé par la propriété selectedIndex
+	      	alert(list.options[list.selectedIndex].innerHTML);
+	  	}, 
+	  	true);
+	</script>
+	<hr />
+	
+	<h2>Exemple d'évènements sur les actions submet() et reset()</h2>
+	<form id="myForm">
+	  <input type="text" value="Entrez un texte" />
+	  <br /><br />
+	  <input type="submit" value="Submit !" />
+	  <input type="reset" value="Reset !" />
+	</form>
+  
+	<script>
+	  var myForm = document.getElementById('myForm');
+	  
+	  myForm.addEventListener(
+	  	'submit', 
+	  	function(e) {
+	     	alert('Vous avez envoyé le formulaire !\n\n'
+	      		 +'Mais celui-ci a été bloqué pour que vous ne changiez pas de page.');
+	      	e.preventDefault();
+	  	}, 
+	  	true);
+	  
+	  myForm.addEventListener(
+	  	'reset', 
+	  	function(e) {
+	      	alert('Vous avez réinitialisé le formulaire !');
+	  	}, 
+	  	true);
+	</script>
+	<hr />
+	
+	<h2>Exemple de gestion du focus() et du blur()</h2>
+	<input id="text2" type="text" value="Entrez un texte" />
+	<br />
+	<br />
+	<input 
+		type="button" 
+		value="Donner le focus" 
+		onclick="document.getElementById('text2').focus();" 
+	/>
+	<br />
+	<input 
+		type="button" 
+		value="Retirer le focus" 
+		onclick="document.getElementById('text2').blur();" 
+	/>
+	<hr />
+	
+	<h2>Exemple de gestion du select()</h2>
+	<input 
+		id="text3" 
+		type="text" 
+		value="Entrez un texte" 
+	/>
+	<br />
+	<br />
+	<input 
+		type="button" 
+		value="Sélectionner le texte" 
+		onclick="document.getElementById('text3').select();" 
+	/>
+</body>
+</html>
