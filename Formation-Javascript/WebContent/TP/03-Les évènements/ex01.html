@@ -1,0 +1,313 @@
+<!-- Exemple d'évènements (souris, clavier) -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exemple 01</title>
+  </head>
+  
+  <body>
+  	<h2>Exemple d'évènement</h2>
+    <span 
+    	onclick="alert('Voici le contenu de l\'élément que vous avez cliqué :\n\n' + this.innerHTML);"
+    >Cliquez-moi !</span>
+    <hr />
+    
+    <h2>Le focus</h2>
+    <input 
+    	id="input"
+    	type="text" 
+    	size="50" 
+    	value="Cliquez ici !" 
+    	onfocus="this.value='Appuyez maintenant sur votre touche de tabulation.';" 
+    	onblur="this.value='Cliquez ici !';"/>  <!-- blur: perte du focus -->
+	<br /><br/>
+	<a 
+		href="#" 
+		onfocus="document.getElementById('input').value = 'Vous avez maintenant le focus sur le lien, bravo !';">
+	Un lien bidon</a>
+	<hr />
+  
+	<h2>Exemple de redirection (bloquée)</h2>
+	<a 
+		href="http://www.siteduzero.com" 
+		onclick="alert('Vous avez cliqué !'); return false;">  <!-- return false; sert à bloquer l'action par défaut de l'événement qui le déclenche -->
+	Cliquez-moi !</a>
+	<hr />
+
+	<h2>Evenements gérés dans le DOM-0</h2>
+	<span id="clickme1">Cliquez-moi !</span>
+	<script>
+	  var element = document.getElementById('clickme1');
+	
+	  element.onclick = function() {
+	      alert("Vous m'avez cliqué !");
+	  };
+	</script>
+	<hr />
+	
+	<h2>Evenements gérés dans le DOM-2</h2>
+	<span id="clickme2">Cliquez-moi !</span>
+	<script>
+	  var element = document.getElementById('clickme2');
+	  
+	  // Premier événement click
+	  element.addEventListener(
+	  	'click', 
+	  	function() {
+    		alert("Et de un !");
+      	},
+	  	false);
+	  
+	  // Deuxième événement click
+	  element.addEventListener(
+	  	'click', 
+	  	function() {
+	      alert("Et de deux !");
+	  	}, 
+	  	false);
+	</script>
+	<hr />
+	
+	<h2>Evenements gérés dans le DOM-2 (valide pour tout navigateur)</h2>
+	<span id="clickme3">Cliquez-moi !</span>
+    <script>
+      function addEvent(el, event, func) {
+          if (el.addEventListener) { 
+          	  // Si notre élément possède la méthode "addEventListener"
+              el.addEventListener(event, func, false);
+          } else { 
+          	  // Si notre élément ne possède pas la méthode "addEventListener"
+              el.attachEvent('on'+event, func);
+          }
+      }
+
+      addEvent(
+      	document.getElementById('clickme3'), 
+      	'click', 
+      	function() {
+          alert("Cette boîte de dialogue s'affiche sur n'importe quel navigateur web !");
+      	}
+      );
+    </script>
+    <hr />
+    
+    <h2>Phase de capture et de bouillonnement des évènements</h2>
+    <div id="capt1">
+  		<span id="capt2">Cliquez-moi pour la phase de capture.</span>
+	</div>
+	
+	<div id="boul1">
+	  <span id="boul2">Cliquez-moi pour la phase de bouillonnement.</span>
+	</div>
+	
+	<script>
+	    var capt1 = document.getElementById('capt1'),
+	        capt2 = document.getElementById('capt2'),
+	        boul1 = document.getElementById('boul1'),
+	        boul2 = document.getElementById('boul2');
+	  
+	    capt1.addEventListener(
+	    	'click', 
+	    	function() {
+	        	alert("L'événement du div vient de se déclencher.");
+	    	}, 
+	    	true);
+	  
+	    capt2.addEventListener(
+	    	'click', 
+	    	function() {
+	        	alert("L'événement du span vient de se déclencher.");
+	    	}, 
+	    	true);
+	  
+	    boul1.addEventListener(
+	    	'click', 
+	    	function() {
+	        	alert("L'événement du div vient de se déclencher.");
+	    	}, 
+	    	false);
+	  
+	    boul2.addEventListener(
+	    	'click', 
+	    	function() {
+	        	alert("L'événement du span vient de se déclencher.");
+	    	}, 
+	    	false);
+	</script>
+	<hr />
+    
+    <h2>L'objet Event</h2>
+    <span id="clickme4">Cliquez-moi !</span>
+	<script>
+	    function addEvent(element, event, func) { 
+	    	// On réutilise notre fonction de compatibilité pour les événements DOM-2
+	        if (element.addEventListener) {
+	            element.addEventListener(event, func, false);
+	        } else {
+	            element.attachEvent('on' + event, func);
+	        }
+	    }
+	
+	    var clickme = document.getElementById('clickme4');
+	
+	    addEvent(
+	    	clickme, 
+	    	'click', 
+	    	function(e) {
+	        	// Si vous avez oublié cette spécificité de l'opérateur OU,
+	        	// allez voir le chapitre des conditions
+	        	var target = e.target || e.srcElement; 
+	        	target.innerHTML = 'Vous avez cliqué !';
+	    	});
+	</script>
+	<hr />
+    
+    <h2>Récupérer l'élément à l'origine du déclenchement de l'événement</h2>
+    <p id="resultA"></p>
+	<div id="parentA1">
+	  Parent
+	  <div id="childA1">Enfant N°1</div>
+	  <div id="childA2">Enfant N°2</div>
+	</div>
+	
+	<script>
+	    var parent1 = document.getElementById('parentA1'),
+	        result = document.getElementById('resultA');
+	  
+	    parent1.addEventListener(
+	    	'mouseover', 
+	    	function(e) {
+	        	result.innerHTML = "L'élément déclencheur de l'événement \"mouseover\" possède l'ID : " 
+	        		+ e.target.id
+	        		+ " (élément HTML déclencheur: "
+	        		+ e.currentTarget.id
+	        		+ ")";
+	    	}, 
+	    	false);
+	</script>
+	<hr />
+    
+    <h2>Récupérer la position de la souris</h2>
+    <div id="position"></div>
+
+	<script>
+	    var position = document.getElementById('position');
+	  
+	    document.addEventListener(
+	    	'mousemove', 
+	    	function(e) {
+	        	position.innerHTML = 'Position X : ' + e.clientX + 'px<br />Position Y : ' + e.clientY + 'px';
+	    	}, 
+	    	false);
+	</script>
+	<hr />
+    
+    <h2>Récupérer l'élément en relation avec un événement de souris</h2>
+    <p id="resultB"></p>
+	<div id="parentB1">
+	  Parent N°1 (Mouseover sur l'enfant)<br />
+	  <div id="childB1">Enfant N°1</div>
+	</div>
+	<br />
+	<div id="parentB2">
+	  Parent N°2 (Mouseout sur l'enfant)<br />
+	  <div id="childB2">Enfant N°2</div>
+	</div>
+	
+	<script>
+	    var child1 = document.getElementById('childB1'),
+	        child2 = document.getElementById('childB2'),
+	        result = document.getElementById('resultB');
+	  
+	    child1.addEventListener(
+	    	'mouseover', 
+	    	function(e) {
+	        	result.innerHTML = "L'élément quitté juste avant que le curseur n'entre sur l'enfant n°1 est : " 
+	        		+ e.relatedTarget.id;
+	    	}, 
+	    	false);
+	  
+	    child2.addEventListener(
+	    	'mouseout', 
+	    	function(e) {
+	        	result.innerHTML = "L'élément survolé juste après que le curseur ait quitté l'enfant n°2 est : " 
+	        		+ e.relatedTarget.id;
+	    	}, 
+	    	false);
+	</script>
+	<hr />
+    
+    <h2>Récupérer les touches frappées par l'utilisateur</h2>
+    <p>
+    	<input id="field" type="text" />
+	</p>
+	<table border="1">
+	    <tr>
+	        <td>keydown (capte toutes les frappes de touches)<br />
+	        keydown se déclenche au moment de l'appui sur la touche 
+	        </td>
+	        <td id="down"></td>
+	    </tr>
+	    <tr>
+	        <td>keypress (capte les touches qui écrivent un caractère)</td>
+	        <td id="press"></td>
+	    </tr>
+	    <tr>
+	        <td>keyup (capte toutes les frappes de touches)<br />
+	        keyup se déclenche lorsque vous relâchez une touche</td>
+	        <td id="up"></td>
+	    </tr>
+	</table>
+	
+	<script>
+	    var field = document.getElementById('field'),
+	        down = document.getElementById('down'),
+	        press  = document.getElementById('press'),
+	        up  = document.getElementById('up');
+	  
+	    document.addEventListener(
+	    	'keydown', 
+	    	function(e) {
+	        	down.innerHTML = e.keyCode;
+	    	}, 
+	    	false);
+	  
+	    document.addEventListener(
+	    	'keypress', 
+	    	function(e) {
+	        	press.innerHTML = e.keyCode;
+	    	}, 
+	    	false);
+	  
+	    document.addEventListener(
+	    	'keyup', 
+	    	function(e) {
+	        	up.innerHTML = e.keyCode;
+	    	}, false);
+	</script>
+	<hr />
+  
+	<h2>Exemple de redirection (bloquée) en JavaScript</h2>
+	<a id="link2" href="http://www.siteduzero.com">Cliquez-moi !</a>
+
+	<script>
+	    var link = document.getElementById('link2');
+	
+	    link.addEventListener(
+	    	'click', function(e) {
+	    		// On bloque l'action par défaut de cet événement
+	        	e.returnValue = false;		// Pour IE antérieur à v9
+
+				if (e.preventDefault) {		// Pour tous les navigateurs (sauf IE 1 à 8)
+				    e.preventDefault();
+				}
+				 
+	        	alert('Vous avez cliqué !');
+	    	}, 
+	    	false);
+	</script>
+
+  </body>
+</html>

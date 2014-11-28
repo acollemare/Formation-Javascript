@@ -1,0 +1,76 @@
+<!-- Exemple d'évènements (souris) qui gère les problèmes d'héritage des évènements -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemple 02</title>
+	
+	<style>
+	#myDiv,#results {
+		margin: 50px;
+	}
+	
+	#myDiv {
+		padding: 10px;
+		width: 200px;
+		text-align: center;
+		background-color: #000;
+	}
+	
+	#myDiv div {
+		margin: 10px;
+		background-color: #555;
+	}
+	</style>
+</head>
+<body>
+	<h2>Exemple d'évènements (souris) qui gère les problèmes d'héritage des évènements</h2>
+
+    <div id="myDiv">
+      <div>Texte 1</div>
+      <div>Texte 2</div>
+      <div>Texte 3</div>
+      <div>Texte 4</div>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+
+      var myDiv = document.getElementById('myDiv'),
+          results = document.getElementById('results');
+
+      myDiv.onmouseover = function(e) {
+        
+          e = e || window.event; // Compatibilité IE
+          var relatedTarget = e.relatedTarget || e.fromElement; // Idem
+
+          while (relatedTarget != myDiv && relatedTarget.nodeName != 'BODY' && relatedTarget != document) {
+              relatedTarget = relatedTarget.parentNode;
+          }
+
+          if (relatedTarget != myDiv) {
+              results.innerHTML += "Le curseur vient d'entrer.<br />";
+          }
+
+      };
+
+      myDiv.onmouseout = function(e) {
+
+          e = e || window.event; // Compatibilité IE
+          var relatedTarget = e.relatedTarget || e.toElement; // Idem
+
+          while (relatedTarget != myDiv && relatedTarget.nodeName != 'BODY' && relatedTarget != document) {
+              relatedTarget = relatedTarget.parentNode;
+          }
+
+          if (relatedTarget != myDiv) {
+              results.innerHTML += "Le curseur vient de sortir.<br />";
+          }
+
+      };
+
+    </script>
+</body>
+</html>
