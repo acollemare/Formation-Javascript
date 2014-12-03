@@ -1,0 +1,66 @@
+<!-- Exemple de formulaire dynamique -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemple 06 - formulaire dynamique </title>
+	
+	<link href="ex06.css" rel="stylesheet" type="text/css" media="all" />
+	
+</head>
+<body>
+	<h2>Exemple de formulaire dynamique</h2>
+	<form id="monFormulaire" action="#" method="post">
+		<fieldset>
+			<legend>Informations personnelles</legend>
+			
+			Sexe (un sexe doit être sélectionné)<br />
+			<input type="radio" name="sex" value="homme" checked />Homme<br />
+			<input type="radio" name="sex" value="femme" />Femme<br />
+			<br />
+			
+			Nom (pas moins de 2 caractères)<br />
+			<input class="champtxt" type="text" name="nom" /><br />
+			<br />
+			
+			Prénom (pas moins de 2 caractères)<br />
+			<input class="champtxt" type="text" name="prenom" /><br />
+			<br />
+			
+			Age (un nombre compris entre 5 et 140)<br />
+			<input class="champtxt" type="text" name="age" /><br />
+		</fieldset>
+		<fieldset>
+			<legend>Informations Site Web</legend>
+			Pseudo (pas moins de 4 caractères)<br />
+			<input class="champtxt" type="text" name="pseudo" /><br />
+			<br />
+			
+			Mot de passe (pas moins de 6 caractères)<br />
+			<input class="champtxt" type="password" name="pwd1" /><br />
+			<br />
+			
+			Mot de passe (confirmation - doit être identique au premier mot de passe)<br />
+			<input class="champtxt" type="password" name="pwd2" /><br />
+			<br />
+			
+			Pays (un pays doit être sélectionné)<br />
+			<select name="pays">
+				<option value="france">France</option>
+				<option value="espagne">Espagne</option>
+				<option value="italie">Italie</option>
+				<option value="allemagne">Allemagne</option>
+			</select><br />
+			<br />
+			
+			Cochez pour recevoir des informations<br />
+			<input type="checkbox" name="coche"/><br />
+		</fieldset>
+		<input type="reset" value="Reset">
+		<input type="submit" value="Submit">
+	</form>
+	
+	<script src="ex06.js"></script>
+</body>
+</html>

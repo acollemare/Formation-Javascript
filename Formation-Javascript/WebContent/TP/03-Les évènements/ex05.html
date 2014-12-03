@@ -1,0 +1,92 @@
+<!-- Exemple de drag & drop -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemple 05</title>
+	
+	<style>
+	.draggableBox {
+	  position: absolute;
+	  width: 80px; height: 60px;
+	  padding-top: 10px;
+	  text-align: center;
+	  font-size: 40px;
+	  background-color: #222;
+	  color: #CCC;
+	  cursor: move;
+	}
+	</style>
+	
+</head>
+<body>
+	<h2>Exemple de drag &#38; drop</h2>
+	<div class="draggableBox">1</div>
+	<div class="draggableBox">2</div>
+	<div class="draggableBox">3</div>
+	
+	<script type="text/javascript">
+		(function() { // On utilise une IEF pour ne pas polluer l'espace global
+		    var storage = {}; // Contient l'objet du div en cours de déplacement
+		    
+		    // Fonction pour gérer les événements sous tous les navigateurs
+		    function addEvent(element, event, func) {
+		        if (element.attachEvent) {
+		            element.attachEvent('on' + event, func);
+		        } else {
+		            element.addEventListener(event, func, true);
+		        }
+		    }
+		    
+		    // Fonction d'initialisation
+		    function init() { 
+		        var elements = document.getElementsByTagName('div'),
+		            elementsLength = elements.length;
+		        
+		        for (var i = 0 ; i < elementsLength ; i++) {
+		            if (elements[i].className === 'draggableBox') {
+		            
+		        		// Initialise le drag & drop
+		                addEvent(
+		                	elements[i],
+		                	'mousedown', 
+		                	function(e) {
+			                    var s = storage;
+			                    s.target = e.target || event.srcElement;
+			                    s.offsetX = e.clientX - s.target.offsetLeft;
+			                    s.offsetY = e.clientY - s.target.offsetTop;
+			                });
+		        
+		        		// Termine le drag & drop
+		                addEvent(
+		                	elements[i],
+		                	'mouseup', 
+		                	function() { 
+		                    	storage = {};
+		                	});
+		            }
+		        }
+		        
+		        // Permet le suivi du drag & drop
+		        addEvent(
+		        	document, 
+		        	'mousemove', 
+		        	function(e) { 
+			            var target = storage.target;
+			            
+			            // Si « target » n'existe pas alors la condition va renvoyer 
+			            // « undefined », ce qui n'exécutera pas les deux lignes suivantes :
+			            if (target) { 
+			                target.style.top = e.clientY - storage.offsetY + 'px';
+			                target.style.left = e.clientX - storage.offsetX + 'px';
+		            	}
+		        	});
+		    }
+		    
+		    // On initialise le code avec notre fonction toute prête  
+		    init(); 
+		})();
+	</script>
+</body>
+</html>
