@@ -1,0 +1,115 @@
+<!-- Exemple d'expression régulière -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exemple 01</title>
+  </head>
+  
+  <body>
+	<h2>Exemple de recherche avec une expression régulière</h2>
+	<div id="output1"></div>
+	<script>
+		var email = prompt("Entrez votre adresse e-mail :", "javascript@siteduzero.com"),
+			resultat = "";
+			
+		if (/^([a-z0-9._-]+)@([a-z0-9._-]+)\.([a-z]{2,6})$/.test(email)) {
+		    resultat =
+		    	'Votre adresse e-mail est : ' + email + '<br />' +
+		    	'Partie locale : ' + RegExp.$1 + '<br />' +
+		    	'Domaine : ' + RegExp.$2 + '<br />' +
+		    	'Extension : ' + RegExp.$3;
+		} else {
+		    resultat = 'Adresse e-mail ' + email + ' invalide !';
+		}
+		
+		document.getElementById("output1").innerHTML = resultat;
+    </script>
+	<hr />
+
+	<h2>Exemple de recherche avec une expression régulière non-greedy
+		(« non gourmande »)</h2>
+	var html = '&lt;a href=&quot;www.mon-adresse.be&quot;&gt;&lt;strong class=&quot;web&quot;&gt;Mon site&lt;/strong&gt;&lt;/a&gt;';
+	<script>
+	    var html = '<a href="www.mon-adresse.be"><strong class="web">Mon site</strong></a>';
+		    
+	    // Recherche standard
+	    /<a href="(.+)">/.exec(html);
+		alert("Recherche standard: " + RegExp.$1); // www.mon-adresse.be
+		
+		// Recherche non-greedy
+	    /<a href="(.+?)">/.exec(html);
+		alert("Recherche non-greedy: " + RegExp.$1); // www.mon-adresse.be
+    </script>
+	<hr />
+
+	<h2>Exemple de recherche et de capture (prévisualisation de BBCode)</h2>
+	L'idée ici est de convertir une balise BBCode<br />
+	<ul>
+		<li>de mise en gras (
+			<code>[b]un peu de texte[/b]</code>
+			) en un formatage HTML de ce type :
+			<code data-claire-semantic="html">&lt;strong&gt;un peu de texte&lt;/strong&gt;</code></li>
+		<li>de mise en italique (
+			<code>[i]un peu de texte[/i]</code>
+			) en un formatage HTML de ce type :
+			<code data-claire-semantic="html">&lt;em&gt;un peu de texte&lt;/em&gt;</code></li>
+		<li>de caractère barré (
+			<code>[s]un peu de texte[/s]</code>
+			) en un formatage HTML de ce type :
+			<code data-claire-semantic="html">&lt;del&gt;un peu de texte&lt;/del&gt;</code></li>
+		<li>de caractère souligné (
+			<code>[u]un peu de texte[/u]</code>
+			) en un formatage HTML de ce type :
+			<code data-claire-semantic="html">&lt;span style=&quot;text-decoration: underline&quot;&gt;un peu de texte&lt;/span&gt;</code></li>
+	</ul>
+	Exemple:<br />
+	[b]un peu de texte1[/b]<code data-claire-semantic="html">&lt;br /&gt;</code><br />
+	[i]un peu de texte2[/i]<code data-claire-semantic="html">&lt;br /&gt;</code><br />
+	[s]un peu de texte3[/s]<code data-claire-semantic="html">&lt;br /&gt;</code><br />
+	[u]un peu de texte4[/u]<code data-claire-semantic="html">&lt;br /&gt;</code><br />
+	<br />
+	<script>
+		function preview1() {
+		    var value = document.getElementById("text1").value;
+			
+		    value = value.replace(/\[b\]([\s\S]*?)\[\/b\]/g, '<strong>$1</strong>'); // Gras
+		    value = value.replace(/\[i\]([\s\S]*?)\[\/i\]/g, '<em>$1</em>'); // Italique
+		    value = value.replace(/\[s\]([\s\S]*?)\[\/s\]/g, '<del>$1</del>'); // Barré
+		    value = value.replace(/\[u\]([\s\S]*?)\[\/u\]/g, '<span style="text-decoration: underline">$1</span>'); // Souligné
+			
+		    document.getElementById("output2").innerHTML = value;
+		}
+	</script>
+	<form>
+		<textarea id="text1" style="border-color: red"></textarea>
+		<br>
+		<button type="button" onclick="preview1()">Prévisualiser</button>
+		<div id="output2"></div>
+	</form>
+	<hr />
+
+	<h2>Exemple de recherche search() et match() avec une expression régulière</h2>
+	<script>
+		function preview2() {
+		    var value = document.getElementById("text2").value;
+
+			var result1 = value.search(/\btonton\b/);
+		    var result2 = value.match(/\btonton\b/g);
+
+			document.getElementById("output3").innerHTML =
+				'(search) Le premier "tonton" apparait en: ' +  (result1 + 1) + "<br />" +
+				'(match)  Il y a ' + result2.length + ' "tonton"';
+		}
+	</script>
+	<form>
+		<textarea id="text2" style="border-color: red">Si ton tonton tond ton tonton, ton tonton tondu sera tondu</textarea>
+		<br>
+		<button type="button" onclick="preview2()">Chercher "Tonton"</button>
+		<div id="output2"></div>
+	</form>
+	<div id="output3"></div>
+
+</body>
+</html>
